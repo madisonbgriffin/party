@@ -55,7 +55,7 @@ const Navbar = () => {
                     <HiOutlineSearch className='text-pink-600'/>
                     <Combobox.Input 
                     onChange={() => {
-                      setQuery(event.target.value)
+                      setQuery(e.target.value)
                     }}
                     className='flex w-full items-center rounded-md px-4 py-2 text-2xl h-10 focus:outline-0' placeholder='Search...'/>
                   </div>

@@ -35,10 +35,10 @@ export default function Example() {
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
           as={Fragment}
-          enter="ease-in-out duration-100"
+          enter="ease-in-out duration-500"
           enterFrom="opacity-0"
           enterTo="opacity-100"
-          leave="ease-in-out duration-100"
+          leave="ease-in-out duration-500"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
@@ -73,7 +73,6 @@ export default function Example() {
                           </button>
                         </div>
                       </div>
-
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
@@ -86,7 +85,6 @@ export default function Example() {
                                     className="h-full w-full object-cover object-center"
                                   />
                                 </div>
-
                                 <div className="ml-4 flex flex-1 flex-col">
                                   <div>
                                     <div className="flex justify-between text-base font-medium text-gray-900">
@@ -99,7 +97,6 @@ export default function Example() {
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm">
                                     <p className="text-gray-500">Qty {product.quantity}</p>
-
                                     <div className="flex">
                                       <button
                                         type="button"
@@ -116,7 +113,6 @@ export default function Example() {
                         </div>
                       </div>
                     </div>
-
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
