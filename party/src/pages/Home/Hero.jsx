@@ -1,7 +1,6 @@
 import {gift, gift3d, gifthand, partyboy, gift3d2} from '../../assets'
 import {useNavigate} from 'react-router-dom'
 import {HiChevronRight} from "react-icons/hi2";
-import index from '../../index.css'
 
 const Hero = () => {
   const navigate = useNavigate();

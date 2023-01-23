@@ -9,5 +9,5 @@
 }
 
 .btn-primary {
-  @apply group mt-10 font-medium rounded-full bg-gradient-to-l from-slate-500/50 via-slate-300/50 to-slate-100/50 text-5x px-10 py-5 mr-2 mb-2 text-center border-current border-4 hover:border-white;
+  @apply mt-10 font-medium rounded-full bg-gradient-to-l from-slate-500/50 via-slate-300/50 to-slate-100/50 text-5xl px-10 py-5 mr-2 mb-2 text-center border-current border-4 hover:border-white;
 }
