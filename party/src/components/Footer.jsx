@@ -1,7 +1,8 @@
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className="h-screen">Footer <br />for scrolling</div>
+
   )
 }
 

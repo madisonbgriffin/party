@@ -1,12 +1,12 @@
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { partylogo } from '../assets';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { HiOutlineSearch, HiSearch } from "react-icons/hi";
-import { Combobox, Menu, Transition } from '@headlessui/react'
+import { Combobox, Menu, Transition, Popover } from '@headlessui/react'
 import { useState } from 'react';
 import { names } from '../data';
 import { Cart } from '.';
-import { useStateContext } from '../../context/StateContext';
+import { useStateContext } from '../context/StateContext';
 
   const activeLink = 'underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative';
   const normalLink = 'hover:underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative';
@@ -17,6 +17,7 @@ import { useStateContext } from '../../context/StateContext';
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   const[query, setQuery] = useState('')
+  const navigate = useNavigate();
 
   const filteredNames = query ? names.filter(name => name.title.toLowerCase().includes(query.toLowerCase())): []
 
@@ -36,50 +37,50 @@ const Navbar = () => {
         <NavLink
           to="/Contact"
           className={({ isActive }) => (isActive ? activeLink : normalLink)}>CONTACT</NavLink>
-        <Menu as='div'className="relative flex text-left">
-          <Menu.Button className={({ open }) => (open ? activeSearch : normalSearch)}><HiOutlineSearch/></Menu.Button>
-          <Menu.Items className="absolute right-0 z-20 mt-11 w-72 origin-top-right rounded-md bg-white">
-            <Menu.Item disabled>
-              <Combobox as='div' 
-              onChange={(name) => {
-                setIsOpen(false)
-                // todo router.push(`/$(name.id)`)
-              }}
-              className='text-black relative'>
-                <div className='divide-y divide-pink-600'>
-                  <div className='flex items-center px-3 py-1'>
-                    <HiOutlineSearch className='text-pink-600'/>
-                    <Combobox.Input 
-                    onChange={(e) => {
-                      setQuery(e.target.value)
-                    }}
-                    className='flex w-full items-center rounded-md px-4 py-2 text-2xl h-10 focus:outline-0' placeholder='Search...'/>
-                  </div>
-                  {filteredNames.length > 0 && (
-                    <Combobox.Options static className='p-1 text-xl max-h-96 overflow-y-auto'>
-                      {filteredNames.map((name) => (
+        <Popover as='div'className="relative flex text-left">
+          <Popover.Button className={({ open }) => (open ? activeSearch : normalSearch)}><HiOutlineSearch/></Popover.Button>
+          <Popover.Panel className="absolute right-0 z-20 mt-11 w-72 origin-top-right rounded-md bg-white">
+            <Combobox as='div' 
+            onChange={(name) => {
+              setQuery('');
+              navigate(`/${name.id}`);
+            }}
+            className='text-black relative'>
+              <div className='divide-y divide-pink-600'>
+                <div className='flex items-center px-3 py-1'>
+                  <HiOutlineSearch className='text-pink-600'/>
+                  <Combobox.Input 
+                  onChange={(e) => {
+                    setQuery(e.target.value)
+                  }}
+                  className='flex w-full items-center rounded-md px-4 py-2 text-2xl h-10 focus:outline-0' placeholder='Search...'/>
+                </div>
+                {filteredNames.length > 0 && (
+                  <Combobox.Options static className='p-1 text-xl max-h-96 overflow-y-auto'>
+                    {filteredNames.map((name) => (
+                      <Popover.Button className='w-full text-left' key={name.id}>
                         <Combobox.Option key={name.id} value={name}>
                           {({ active }) => (
-                            <div className={`px-4 py-2 rounded-md ${active ? 'bg-pink-600 text-white' : ''}`}>
+                            <div className={`px-4 py-2 rounded-md cursor-pointer ${active ? 'bg-pink-600 text-white' : ''}`}>
                               {name.title}
                             </div>
                           )} 
                         </Combobox.Option>
-                      ))}
-                    </Combobox.Options>
-                  )}
-                  {
-                    query && filteredNames.length === 0 &&  (
-                      <div className='p-1'>
-                        <p className='px-4 py-2 text-xl'>No results found</p>
-                      </div>
-                    )
-                  }
-                </div>
-              </Combobox>
-            </Menu.Item>
-          </Menu.Items>
-        </Menu>
+                      </Popover.Button>
+                    ))}
+                  </Combobox.Options>
+                )}
+                {
+                  query && filteredNames.length === 0 &&  (
+                    <div className='p-1'>
+                      <p className='px-4 py-2 text-xl'>No results found</p>
+                    </div>
+                  )
+                }
+              </div>
+            </Combobox>
+          </Popover.Panel>
+        </Popover>
       </div>
       <div>
         <button type='button' onClick={() => setShowCart(true)} className='text-6xl mx-5 z-10 relative'>
@@ -93,5 +94,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-// dropdown search like designcode.io
-// shop right sidebar like

@@ -1,8 +1,8 @@
 import {Route, Routes} from "react-router-dom"
 import {About, Contact, Home, Shop} from "./pages"
-import {Navbar} from "./components"
+import {Footer, Navbar, Notfound } from "./components"
 import "./index.css"
-import { StateContext } from "../context/StateContext"
+import { StateContext } from "./context/StateContext"
 
 const App = () => {
   return (
@@ -12,11 +12,13 @@ const App = () => {
           <div className="lg:mx-24">
             <Navbar/>
             <Routes>
-              <Route path="/" element={< Home />}/>
-              <Route path="/About" element={< About />}/>
-              <Route path="Shop" element={< Shop />}/>
-              <Route path="/Contact" element={< Contact />}/>
+              <Route path="/" element={<Home />} />
+              <Route path="/About" element={<About />} />
+              <Route path="Shop" element={<Shop />}/>
+              <Route path="/Contact" element={<Contact />} />
+              <Route path="*" element={<Notfound />}/>
             </Routes>
+            <Footer />
           </div>
         </div>
       </div>

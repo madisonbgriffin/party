@@ -5,7 +5,7 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { cartItems } from '../data';
 
-import { useStateContext } from '../../context/StateContext';
+import { useStateContext } from '../context/StateContext';
 
 const Cart = () => {
   const { totalPrice, totalQuantities, cartItems, showCart, setShowCart, toggleCartItemQuanitity, onRemove, onAdd } = useStateContext();
