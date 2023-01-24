@@ -6,6 +6,7 @@ import { Combobox, Menu, Transition } from '@headlessui/react'
 import { useState } from 'react';
 import { names } from '../data';
 import { Cart } from '.';
+import { useStateContext } from '../../context/StateContext';
 
   const activeLink = 'underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative';
   const normalLink = 'hover:underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative';
@@ -14,15 +15,10 @@ import { Cart } from '.';
   const normalSearch = 'mx-5 z-10 relative hover:text-pink-600';
 
 const Navbar = () => {
-  const [sidebarState, setSidebarState] = useState(false);
+  const { showCart, setShowCart, totalQuantities } = useStateContext();
   const[query, setQuery] = useState('')
 
   const filteredNames = query ? names.filter(name => name.title.toLowerCase().includes(query.toLowerCase())): []
-
-
-  const handleClick = () => {
-    setSidebarState(current => !current);
-  };
 
   return (
     <nav
@@ -54,7 +50,7 @@ const Navbar = () => {
                   <div className='flex items-center px-3 py-1'>
                     <HiOutlineSearch className='text-pink-600'/>
                     <Combobox.Input 
-                    onChange={() => {
+                    onChange={(e) => {
                       setQuery(e.target.value)
                     }}
                     className='flex w-full items-center rounded-md px-4 py-2 text-2xl h-10 focus:outline-0' placeholder='Search...'/>
@@ -86,8 +82,11 @@ const Navbar = () => {
         </Menu>
       </div>
       <div>
-        <button type='button' onClick={handleClick} className='text-5xl mx-5 z-10 relative hover:text-pink-600'><HiOutlineShoppingBag /></button>
-          {sidebarState && <Cart />}
+        <button type='button' onClick={() => setShowCart(true)} className='text-6xl mx-5 z-10 relative'>
+          <HiOutlineShoppingBag className='hover:text-pink-600'/>
+          <span className='absolute text-lg bg-pink-600 rounded-full text-center font-semibold px-2 -right-1 top-8 border-4 border-white'>{totalQuantities}</span>
+        </button>
+        {showCart && <Cart />}
       </div>
     </nav>
   )
