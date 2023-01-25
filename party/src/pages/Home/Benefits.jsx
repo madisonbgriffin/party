@@ -2,7 +2,10 @@ import React from 'react'
 
 const Benefits = () => {
   return (
-    <div>Benefits</div>
+    <div>
+      <div>Here are the Benefits</div>
+      <div>Benefit mapper</div>
+    </div>
   )
 }
 

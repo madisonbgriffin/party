@@ -1,5 +1,4 @@
 import { Hero, Testimonials, Benefits, Features, FAQ, CTA } from "../../pages"
-import { Footer } from '../../components'
 
 const Contact = () => (
     <>
@@ -9,7 +8,6 @@ const Contact = () => (
     <Features />
     <FAQ />
     <CTA />
-    <Footer />
     </>
 )
 

@@ -89,20 +89,20 @@ const Navbar = () => {
     
   return (
     <nav
-      className='w-full flex py-6 justify-between items-center text-white font-medium'>
+      className=' w-full flex py-6 justify-between items-center text-white font-medium'>
       <Link to="/">
         <img src={partylogo} alt="Logo" className='h-28 z-10 relative'/>
       </Link>
       <div className='flex text-3xl'>
         <NavLink
           to="/About"
-          className={({ isActive }) => (isActive ? activeLink : normalLink)}>ABOUT</NavLink>
+          className={({ isActive }) => (isActive ? activeLink : normalLink)}>About</NavLink>
         <NavLink
           to="/Shop"
-          className={({ isActive }) => (isActive ? activeLink : normalLink)}>SHOP</NavLink>
+          className={({ isActive }) => (isActive ? activeLink : normalLink)}>Shop</NavLink>
         <NavLink
           to="/Contact"
-          className={({ isActive }) => (isActive ? activeLink : normalLink)}>CONTACT</NavLink>
+          className={({ isActive }) => (isActive ? activeLink : normalLink)}>Contact</NavLink>
         <Popover as='div'className="relative flex text-left">
           <Popover.Button 
             className={({ open }) => (open ? activeSearch : normalSearch)}><HiOutlineSearch/></Popover.Button>

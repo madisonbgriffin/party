@@ -1,7 +1,21 @@
+import { Carousel, Search, Sort, Filter, Product, Pagination } from '../../pages'
 
 const Shop = () => (
     <>
-      <h1 className="text-9xl font-bold underline flex justify-center text-white">Shop</h1>
+      {/* <h1 className="text-9xl font-bold underline flex justify-center text-white">Shop</h1> */}
+      <Carousel />
+      <Search />
+      <Sort />
+      <Filter />
+      <Product />
+      <Product />
+      <Product />
+      <Product />
+      <Product />
+      <Product />
+      <Product />
+      <Pagination />
+      <Preview />
     </>
   )
 
