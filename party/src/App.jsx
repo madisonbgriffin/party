@@ -3,6 +3,7 @@ import {About, Contact, Home, Shop} from "./pages"
 import {Footer, Navbar, Notfound } from "./components"
 import "./index.css"
 import { StateContext } from "./context/StateContext"
+import {useState} from 'react';
 
 const App = () => {
   return (
