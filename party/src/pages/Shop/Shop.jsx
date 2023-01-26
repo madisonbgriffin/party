@@ -1,4 +1,4 @@
-import { Carousel, Search, Sort, Filter, Product, Pagination } from '../../pages'
+import { Carousel, Search, Sort, Filter, Product, Pagination, Preview } from '../../pages'
 
 const Shop = () => (
     <>

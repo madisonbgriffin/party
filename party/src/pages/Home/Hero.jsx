@@ -9,9 +9,11 @@ const Hero = () => {
     navigate('/Shop')
   }
   return (
-    <div class="mt-8 grid-cols-2">
+    // Also use 'className' not 'class'
+    // https://noorui.com/blog/how-to-create-bootstrap-grid-system-in-tailwindcss
+    <div className="mt-8 grid-cols-2">
       
-        <div class="text-white card">
+        <div className="text-white card">
           party in a box
           </div>
           <div>

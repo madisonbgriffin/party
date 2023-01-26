@@ -34,6 +34,8 @@ const Navbar = () => {
       )
     }
   }
+
+
   function ComboBoxTest() {
     const [items, setItems] = useState(names)
     const {
@@ -69,15 +71,15 @@ const Navbar = () => {
             </div>
             <Combobox.Options {...getMenuProps()} static className='p-1 text-xl max-h-96 overflow-y-auto'>
               { isOpen &&
-                items.map((item) => (
+                items.map((item, index) => (
                   <Popover.Button className='w-full text-left' key={item.id} {...getItemProps({item})}>
                     <Combobox.Option value={item}>
-                      {({ active }) => (
-                        <div className={`px-4 py-2 rounded-md cursor-pointer ${active ? 'bg-pink-600 text-white' : ''}`}>
-                          {item.title}
-                        </div>
-                      )}
-                    </Combobox.Option>
+                        {({ active }) => (
+                          <div className={`px-4 py-2 rounded-md cursor-pointer ${active ? 'bg-pink-600 text-white' : ''}`}>
+                            {item.title}
+                          </div>
+                        )}
+                      </Combobox.Option>
                   </Popover.Button>
                 ))
               } 
@@ -89,7 +91,7 @@ const Navbar = () => {
     
   return (
     <nav
-      className=' w-full flex py-6 justify-between items-center text-white font-medium'>
+      className='w-full flex py-6 justify-between items-center text-white font-medium'>
       <Link to="/">
         <img src={partylogo} alt="Logo" className='h-28 z-10 relative'/>
       </Link>
