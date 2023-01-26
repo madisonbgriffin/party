@@ -93,7 +93,7 @@ const Navbar = () => {
                 ))
               } 
               {
-                 names.filter(getNamesFilter(inputValue)).length === 0 &&  (
+                names.filter(getNamesFilter(inputValue)).length === 0 &&  (
                   <div className='p-1'>
                     <p className='px-4 py-2 text-xl'>No results found</p>
                   </div>
@@ -110,7 +110,7 @@ const Navbar = () => {
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         {/* logo */}
         <Link to="/">
-         <img src={partylogo} alt="Logo" className="h-20 mr-3 sm:h-9"/>
+          <img src={partylogo} alt="Logo" className="h-20 mr-3 sm:h-9"/>
         </Link>
 
       {/* links */}
