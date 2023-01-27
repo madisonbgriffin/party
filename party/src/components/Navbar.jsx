@@ -2,11 +2,16 @@ import { HiOutlineSearch, HiSearch } from "react-icons/hi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { NavLink, Link } from "react-router-dom";
 
+
+
 import { Transition, Popover } from "@headlessui/react";
+
+
 
 import { Cart, NavbarSearch } from ".";
 import { partylogo } from "../assets";
 import { useStateContext } from "../context/StateContext";
+
 
 // Navbar styling classes
 const activeLink =
@@ -19,19 +24,19 @@ const activeSearch = "mx-5 z-10 relative text-pink-600";
 const normalSearch = "mx-5 z-10 relative hover:text-pink-600";
 
 const Navbar = () => {
-  const { showCart, setShowCart, totalQuantities, setQuery } =
+  const { totalQuantities, setQuery, setIsShowing } =
     useStateContext();
 
   return (
-    <nav className=" px-2 sm:px-4 py-2.5  w-full z-20 top-0 left-0  ">
-      <div className="container flex flex-wrap items-center justify-between mx-auto">
+    <nav className=" sm:px-4 top-0 left-0  z-20 w-full px-2 py-2.5  ">
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
         {/* logo */}
         <Link to="/">
-          <img src={partylogo} alt="Logo" className="h-20 mr-3 sm:h-9" />
+          <img src={partylogo} alt="Logo" className="sm:h-9 mr-3 h-20" />
         </Link>
 
         {/* links */}
-        <div className="flex md:order-2">
+        <div className="md:order-2 flex">
           <div>
             <NavLink
               to="/About"
@@ -71,18 +76,20 @@ const Navbar = () => {
         </div>
 
         {/*shopping cart */}
-        <div className="flex md:order-3">
+        <div className="md:order-3 flex">
           <button
             type="button"
-            onClick={() => setShowCart(true)}
-            className=" px-5 py-2.5 mr-3 md:mr-0 text-6xl mx-5 z-10 relative"
+            onClick={() => {
+              setIsShowing((isShowing) => !isShowing);
+            }}
+            className=" md:mr-0 relative z-10 mx-5 mr-3 px-5 py-2.5 text-6xl"
           >
             <HiOutlineShoppingBag className="hover:text-pink-600" />
-            <span className="absolute text-lg bg-pink-600 rounded-full text-center font-semibold px-2 -right-1 top-8 border-4 border-white">
+            <span className="absolute -right-1 top-8 rounded-full border-4 border-white bg-pink-600 px-2 text-center text-lg font-semibold">
               {totalQuantities}
             </span>
           </button>
-          {showCart && <Cart />}
+          {setIsShowing && <Cart />}
         </div>
       </div>
     </nav>

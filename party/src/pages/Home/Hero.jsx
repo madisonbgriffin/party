@@ -13,18 +13,15 @@ const Hero = () => {
     // Also use 'className' not 'class'
     // https://noorui.com/blog/how-to-create-bootstrap-grid-system-in-tailwindcss
     <div className="container mx-auto">
-        {" "}
-      <div className="grid gap-1 grid-cols-3 lg:grid-cols-2">
-
+      {" "}
+      <div className="lg:grid-cols-2 grid grid-cols-3 gap-1">
         <div className="text-6xl font-black">
           THE PERFECT PARTY ALL IN ONE BOX
         </div>
-        <div></div>
-          {" "}
-        <div className="w-60 h-60">
+        <div></div>{" "}
+        <div className="h-60 w-60">
           <img src={gift3d} alt="Gift" />
-        </div>
-          {" "}
+        </div>{" "}
       </div>
     </div>
     // <div className='relative  px-6 pt-10 pb-8 ring-1 ring-gray-900/5'>

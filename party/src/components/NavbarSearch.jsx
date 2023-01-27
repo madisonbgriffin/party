@@ -26,30 +26,30 @@ const NavbarSearch = () => {
         setQuery("");
         navigate(`/${name.id}`);
       }}
-      className="text-black relative"
+      className="relative text-black"
     >
       <div className="divide-y divide-pink-600">
         <div className="flex items-center px-3 py-1">
-          <HiOutlineSearch className="text-pink-600 text-3xl" />
+          <HiOutlineSearch className="text-3xl text-pink-600" />
           <Combobox.Input
             onChange={(e) => {
               setQuery(e.target.value);
             }}
-            className="flex w-full items-center rounded-md px-4 py-2 text-2xl h-10 focus:outline-0"
+            className="flex h-10 w-full items-center rounded-md px-4 py-2 text-2xl focus:outline-0"
             placeholder="Search..."
           />
         </div>
         {nameResults.length > 0 && (
           <Combobox.Options
             static
-            className="p-1 text-xl max-h-96 overflow-y-auto"
+            className="max-h-96 overflow-y-auto p-1 text-xl"
           >
             {nameResults.map((name) => (
               <Popover.Button className="w-full text-left" key={name.id}>
                 <Combobox.Option key={name.id} value={name}>
                   {({ active }) => (
                     <div
-                      className={`px-4 py-2 rounded-md cursor-pointer ${
+                      className={`cursor-pointer rounded-md px-4 py-2 ${
                         active ? "bg-pink-600 text-white" : ""
                       }`}
                     >

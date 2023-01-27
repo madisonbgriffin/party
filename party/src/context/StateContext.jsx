@@ -4,12 +4,12 @@ import { toast } from "react-hot-toast";
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
-  const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
   const [query, setQuery] = useState("");
+  const [isShowing, setIsShowing] = useState(false);
 
   let foundProduct;
   let index;
@@ -94,8 +94,6 @@ export const StateContext = ({ children }) => {
   return (
     <Context.Provider
       value={{
-        showCart,
-        setShowCart,
         cartItems,
         totalPrice,
         totalQuantities,
@@ -110,6 +108,8 @@ export const StateContext = ({ children }) => {
         setTotalQuantities,
         setQuery,
         query,
+        isShowing,
+        setIsShowing,
       }}
     >
       {children}
