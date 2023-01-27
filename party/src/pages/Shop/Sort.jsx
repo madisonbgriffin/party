@@ -1,8 +1,5 @@
-
 const Sort = () => {
-  return (
-    <div>Sort</div>
-  )
-}
+  return <div>Sort</div>;
+};
 
-export default Sort
+export default Sort;

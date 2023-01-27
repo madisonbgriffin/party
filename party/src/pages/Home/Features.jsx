@@ -1,9 +1,5 @@
-import React from 'react'
-
 const Features = () => {
-  return (
-    <div>Features mapper</div>
-  )
-}
+  return <div>Features mapper</div>;
+};
 
-export default Features
+export default Features;

@@ -1,8 +1,5 @@
-
 const example = () => {
-  return (
-    <div>example</div>
-  )
-}
+  return <div>example</div>;
+};
 
-export default example
+export default example;

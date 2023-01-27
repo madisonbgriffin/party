@@ -1,23 +1,32 @@
-import {gift, gift3d, gifthand, partyboy, gift3d2} from '../../assets'
-import {useNavigate} from 'react-router-dom'
-import {HiChevronRight} from "react-icons/hi2";
+import { HiChevronRight } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
+
+import { gift, gift3d, gifthand, partyboy, gift3d2 } from "../../assets";
 
 const Hero = () => {
   const navigate = useNavigate();
 
   const shopPage = () => {
-    navigate('/Shop')
-  }
+    navigate("/Shop");
+  };
   return (
     // Also use 'className' not 'class'
     // https://noorui.com/blog/how-to-create-bootstrap-grid-system-in-tailwindcss
-    <div class="container mx-auto">
-        <div class="grid gap-1 grid-cols-3 lg:grid-cols-2">
-           <div className="text-6xl font-black">THE PERFECT PARTY ALL IN ONE BOX</div>
-            <div></div>
-              <div className="w-60 h-60"><img src={gift3d} alt="Gift"/></div>
-          </div>
-            </div>
+    <div className="container mx-auto">
+        {" "}
+      <div className="grid gap-1 grid-cols-3 lg:grid-cols-2">
+
+        <div className="text-6xl font-black">
+          THE PERFECT PARTY ALL IN ONE BOX
+        </div>
+        <div></div>
+          {" "}
+        <div className="w-60 h-60">
+          <img src={gift3d} alt="Gift" />
+        </div>
+          {" "}
+      </div>
+    </div>
     // <div className='relative  px-6 pt-10 pb-8 ring-1 ring-gray-900/5'>
     // <div className='text-white '>
     //   <div className=' flex-auto '>
@@ -32,25 +41,25 @@ const Hero = () => {
     //         className="btn-primary"
     //         onClick={shopPage}> {/* figure out this button style */}
     //             SHOP OUR PRODUCTS
-              
+
     //           {/* <HiChevronRight className='ml-3'/> arrow or no??? */}
     //           {/* make glassy */}
     //       </button>
     //     </div>
-        
+
     //     <div className="w-1/2 relative z-10">
     //       <div className='mx-20'>
     //         <img src={gift3d} alt="Gift"/>
     //       </div>
     //     </div>
     //     </div>
-        // <div
-  //        className="absolute z-0 top-0 left-0 w-1/2 h-1/2 rounded-full bg-[#D3ACF1] opacity-[0.84] blur-[130px]"/>
-  //       <div
-  //         className="absolute z-0 top-0 right-0 w-1/2 h-1/2 rounded-full bg-[#F97FC8] opacity-[0.94] blur-[130px]"/>
-  //     </div>
-  //   </div>
-  )
-}
+    // <div
+    //        className="absolute z-0 top-0 left-0 w-1/2 h-1/2 rounded-full bg-[#D3ACF1] opacity-[0.84] blur-[130px]"/>
+    //       <div
+    //         className="absolute z-0 top-0 right-0 w-1/2 h-1/2 rounded-full bg-[#F97FC8] opacity-[0.94] blur-[130px]"/>
+    //     </div>
+    //   </div>
+  );
+};
 
-export default Hero
+export default Hero;

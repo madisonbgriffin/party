@@ -1,14 +1,24 @@
-import { Fragment } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { HiOutlineXMark, HiOutlineShoppingBag } from 'react-icons/hi2'
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import { TiDeleteOutline } from 'react-icons/ti';
-import { cartItems } from '../data';
+import { Fragment } from "react";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { HiOutlineXMark, HiOutlineShoppingBag } from "react-icons/hi2";
+import { TiDeleteOutline } from "react-icons/ti";
 
-import { useStateContext } from '../context/StateContext';
+import { Dialog, Transition } from "@headlessui/react";
+
+import { useStateContext } from "../context/StateContext";
+import { cartItems } from "../data";
 
 const Cart = () => {
-  const { totalPrice, totalQuantities, cartItems, showCart, setShowCart, toggleCartItemQuanitity, onRemove, onAdd } = useStateContext();
+  const {
+    totalPrice,
+    totalQuantities,
+    cartItems,
+    showCart,
+    setShowCart,
+    toggleCartItemQuanitity,
+    onRemove,
+    onAdd,
+  } = useStateContext();
 
   return (
     <Transition.Root show={showCart} as={Fragment}>
@@ -41,7 +51,12 @@ const Cart = () => {
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                     <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                       <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-lg font-medium text-gray-900">Shopping cart <span className='text-pink-600 ml-2.5'>({totalQuantities} items)</span> </Dialog.Title>
+                        <Dialog.Title className="text-lg font-medium text-gray-900">
+                          Shopping cart{" "}
+                          <span className="text-pink-600 ml-2.5">
+                            ({totalQuantities} items)
+                          </span>{" "}
+                        </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <button
                             type="button"
@@ -49,7 +64,10 @@ const Cart = () => {
                             onClick={() => setShowCart(false)}
                           >
                             <span className="sr-only">Close panel</span>
-                            <HiOutlineXMark className="h-6 w-6" aria-hidden="true" />
+                            <HiOutlineXMark
+                              className="h-6 w-6"
+                              aria-hidden="true"
+                            />
                           </button>
                         </div>
                       </div>
@@ -58,10 +76,12 @@ const Cart = () => {
 
                       {cartItems.length < 1 && (
                         <div className="text-center m-10">
-                          <div className='text-9xl flex justify-center'>
-                            <HiOutlineShoppingBag/>
+                          <div className="text-9xl flex justify-center">
+                            <HiOutlineShoppingBag />
                           </div>
-                          <h3 className='font-semibold text-xl'>Your shopping bag is empty</h3>
+                          <h3 className="font-semibold text-xl">
+                            Your shopping bag is empty
+                          </h3>
                           <button
                             type="button"
                             onClick={() => setShowCart(false)}
@@ -99,10 +119,11 @@ const Cart = () => {
                           </div>
                         ))} */}
 
-
-
                         <div className="flow-root">
-                          <ul role="list" className="-my-6 divide-y divide-gray-200">
+                          <ul
+                            role="list"
+                            className="-my-6 divide-y divide-gray-200"
+                          >
                             {cartItems.map((item) => (
                               <li key={item.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -120,10 +141,14 @@ const Cart = () => {
                                       </h3>
                                       <p className="ml-4">${item.price}</p>
                                     </div>
-                                    <p className="mt-1 text-sm text-gray-500">{item.color}</p>
+                                    <p className="mt-1 text-sm text-gray-500">
+                                      {item.color}
+                                    </p>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm">
-                                    <p className="text-gray-500">Qty {item.quantity}</p>
+                                    <p className="text-gray-500">
+                                      Qty {item.quantity}
+                                    </p>
                                     <div className="flex">
                                       <button
                                         type="button"
@@ -146,7 +171,9 @@ const Cart = () => {
                         <p>Subtotal</p>
                         <p>$262.00</p>
                       </div>
-                      <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                      <p className="mt-0.5 text-sm text-gray-500">
+                        Shipping and taxes calculated at checkout.
+                      </p>
                       <div className="mt-6">
                         <a
                           href="#"
@@ -177,7 +204,7 @@ const Cart = () => {
         </div>
       </Dialog>
     </Transition.Root>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

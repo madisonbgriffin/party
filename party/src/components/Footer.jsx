@@ -1,9 +1,10 @@
-
 const Footer = () => {
   return (
-    <div className="h-screen">Footer <br />for scrolling</div>
+    <div className="h-screen">
+      Footer <br />
+      for scrolling
+    </div>
+  );
+};
 
-  )
-}
-
-export default Footer
+export default Footer;
