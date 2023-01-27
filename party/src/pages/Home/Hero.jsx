@@ -15,7 +15,7 @@ const Hero = () => {
     <div className="container mx-auto">
       {" "}
       <div className="lg:grid-cols-2 grid grid-cols-3 gap-1">
-        <div className="text-6xl font-black">
+        <div className="text-6xl font-black text-white">
           THE PERFECT PARTY ALL IN ONE BOX
         </div>
         <div></div>{" "}

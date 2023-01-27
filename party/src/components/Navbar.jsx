@@ -36,7 +36,7 @@ const Navbar = () => {
         </Link>
 
         {/* links */}
-        <div className="md:order-2 flex">
+        <div className="text-white">
           <div>
             <NavLink
               to="/About"
