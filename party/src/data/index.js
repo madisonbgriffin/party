@@ -398,6 +398,18 @@ export const names = [{
         id: "100",
         title: "Ashley Roberts"
     },
+    {
+        id: "101",
+        title: "Joshua Fugate"
+    },
+    {
+        id: "102",
+        title: "Caden Chan"
+    },
+    {
+        id: "103",
+        title: "Avery Rios"
+    },
 ];
 
 export const cartItems = [{
