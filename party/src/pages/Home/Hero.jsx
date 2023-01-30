@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     // Also use 'className' not 'class'
     // https://noorui.com/blog/how-to-create-bootstrap-grid-system-in-tailwindcss
-    <div className="container mx-auto">
+    <section className="container mx-auto">
       {" "}
       <div className="lg:grid-cols-2 grid grid-cols-3 gap-1">
         <div className="text-6xl font-black text-white">
@@ -23,7 +23,7 @@ const Hero = () => {
           <img src={gift3d} alt="Gift" />
         </div>{" "}
       </div>
-    </div>
+    </section>
     // <div className='relative  px-6 pt-10 pb-8 ring-1 ring-gray-900/5'>
     // <div className='text-white '>
     //   <div className=' flex-auto '>
