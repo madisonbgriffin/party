@@ -14,7 +14,7 @@ const Hero = () => {
     <section className="mx-auto py-16">
       <div className="grid grid-cols-2 gap-1">
         <div className=" relative z-10 text-white">
-          <div className=" text-8xl font-black">
+          <div className=" text-7xl font-black">
             THE PERFECT PARTY ALL IN ONE BOX
           </div>
           <div className="mt-3 text-4xl font-normal">
