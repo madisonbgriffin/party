@@ -445,7 +445,7 @@ export const slide_images = [
   {
     title: "New Year's Eve",
     image:
-      "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201812/NEW_YEAR_PARTY_345.jpeg?size=690:388",
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/new-year-party-royalty-free-image-495479466-1541453010.jpg",
   },
   {
     title: "Christmas",

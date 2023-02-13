@@ -2,16 +2,11 @@ import { HiOutlineSearch, HiSearch } from "react-icons/hi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { NavLink, Link } from "react-router-dom";
 
-
-
 import { Transition, Popover } from "@headlessui/react";
-
-
 
 import { Cart, NavbarSearch } from ".";
 import { partylogo } from "../assets";
 import { useStateContext } from "../context/StateContext";
-
 
 // Navbar styling classes
 const activeLink =
@@ -24,11 +19,10 @@ const activeSearch = "mx-5 z-10 relative text-pink-600";
 const normalSearch = "mx-5 z-10 relative hover:text-pink-600";
 
 const Navbar = () => {
-  const { totalQuantities, setQuery, setIsShowing } =
-    useStateContext();
+  const { totalQuantities, setQuery, setIsShowing } = useStateContext();
 
   return (
-    <nav className=" sm:px-4 top-0 left-0  z-20 w-full px-2 py-2.5  ">
+    <nav className="sm:px-4 relative top-0 left-0 z-10 w-full px-2 py-2.5 font-medium">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         {/* logo */}
         <Link to="/">
@@ -37,7 +31,7 @@ const Navbar = () => {
 
         {/* links */}
         <div className="text-white">
-          <div>
+          <div className="flex text-3xl">
             <NavLink
               to="/About"
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
@@ -76,7 +70,7 @@ const Navbar = () => {
         </div>
 
         {/*shopping cart */}
-        <div className="md:order-3 flex">
+        <div className="md:order-3 flex text-white">
           <button
             type="button"
             onClick={() => {
@@ -85,7 +79,7 @@ const Navbar = () => {
             className=" md:mr-0 relative z-10 mx-5 mr-3 px-5 py-2.5 text-6xl"
           >
             <HiOutlineShoppingBag className="hover:text-pink-600" />
-            <span className="absolute -right-1 top-8 rounded-full border-4 border-white bg-pink-600 px-2 text-center text-lg font-semibold">
+            <span className="absolute top-12 rounded-full border-4 border-white bg-pink-600 px-2 text-center text-lg font-semibold">
               {totalQuantities}
             </span>
           </button>
