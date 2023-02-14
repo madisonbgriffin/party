@@ -22,25 +22,30 @@ const Navbar = () => {
   const { totalQuantities, setQuery, setIsShowing } = useStateContext();
 
   return (
-    <nav className="sm:px-4 relative top-0 left-0 z-10 w-full px-2 py-2.5 font-medium">
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
+    <nav>
+      <div className=" w-full top-0 left-0">
+      <div className="md:flex py-4 md:px-10 px-7 items-center justify-between">
         {/* logo */}
+        <div className="mr-1 pt-2">
         <Link to="/">
           <img src={partylogo} alt="Logo" className="sm:h-9 mr-3 h-20" />
         </Link>
-
+        </div>
         {/* links */}
-        <div className="text-white">
-          <div className="flex text-3xl">
+        <div className="md:flex md:items-center text-white">
+          <div className="text-2xl">
+            <div className="md:ml-8">
             <NavLink
               to="/About"
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
             >
+            
               About
             </NavLink>
+            </div>
             <NavLink
               to="/Shop"
-              className={({ isActive }) => (isActive ? activeLink : normalLink)}
+              className= {({ isActive }) => (isActive ? activeLink : normalLink)}
             >
               Shop
             </NavLink>
@@ -85,6 +90,7 @@ const Navbar = () => {
           </button>
           {setIsShowing && <Cart />}
         </div>
+      </div>
       </div>
     </nav>
   );
