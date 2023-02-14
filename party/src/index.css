@@ -14,6 +14,10 @@
   font-family: "Outfit", sans-serif;
 }
 
+body {
+  overflow-x:hidden;
+}
+
 .btn-primary {
   @apply mt-10 mr-2 mb-2 rounded-full border-4 border-current bg-gradient-to-l from-slate-500/50 via-slate-300/50 to-slate-100/50 px-10 py-5 text-center text-5xl font-medium hover:border-white;
 }
