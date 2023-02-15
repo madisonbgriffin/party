@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className=" min-h-screen mx-auto py-16">
+    <section className=" mx-auto min-h-screen py-16">
       <div className="grid grid-cols-2 gap-1">
         <div className=" relative z-10 text-white">
           <div className=" text-7xl font-black">
@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
           <button
             type="button"
-            className="glass mt-10 mr-2 mb-2 px-10 py-5 text-center text-5xl"
+            className="glass mt-10 mr-2 mb-2 px-10 py-5 text-center text-5xl duration-200 ease-in-out hover:scale-110"
             onClick={shopPage}
           >
             SHOP OUR PRODUCTS

@@ -1,10 +1,12 @@
+import CountUp from "react-countup";
 import Marquee from "react-fast-marquee";
+import { InView } from "react-intersection-observer";
 
 import { swirl } from "../../assets";
 
 const Testimonials = () => {
   return (
-    <>
+    <section>
       <div className="container mx-auto py-16">
         <div className="absolute -left-48">
           <img src={swirl} alt="swirl" className="relative top-36" />
@@ -15,16 +17,18 @@ const Testimonials = () => {
         <div className="absolute right-72">
           <div className="relative bottom-0 z-0 h-[475px] w-[475px] rounded-[50%] bg-gradient-to-b from-[#9940EB]/[0.54] to-[#F05EC0]/[0.68] opacity-[0.75] blur-[3px]" />
         </div>
-        <div className="lg:grid-cols-3 grid grid-cols-1 gap-10 text-white">
-          <div className="glass relative z-10 rounded-[69px] p-8">
-            <img
-              src="https://miro.medium.com/max/1400/1*cYJ4yEhb1RfFicQRdVyP_Q.jpeg"
-              alt="Indian Customer"
-              className="h-32 w-32 rounded-full"
-            />
-            <div className="mt-3 text-2xl font-bold">
-              Dancey Dave
+        <div className="grid grid-cols-1 gap-10 text-white lg:grid-cols-3">
+          <div className="glass relative z-10 rounded-[69px] p-8 duration-200 ease-in-out hover:scale-110">
+            <div className="h-32 w-32 overflow-hidden rounded-full">
+              <div className="relative -left-[60px] w-60">
+                <img
+                  src="https://totalfratmove.com/wp-content/uploads/2021/01/Frar-Boy.jpg"
+                  alt="Dancey Dave"
+                  className="aspect-auto"
+                />
+              </div>
             </div>
+            <div className="mt-3 text-2xl font-bold">Dancey Dave</div>
             <div className="mt-1 text-xl font-medium">
               President of Alpha Sigma Pi
             </div>
@@ -34,10 +38,10 @@ const Testimonials = () => {
               legendary night.”
             </div>
           </div>
-          <div className="glass relative z-10 rounded-[69px] p-8">
+          <div className="glass relative z-10 rounded-[69px] p-8 duration-200 ease-in-out hover:scale-110">
             <img
-              src="https://miro.medium.com/max/1400/1*cYJ4yEhb1RfFicQRdVyP_Q.jpeg"
-              alt="Indian Customer"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCiXWB9DQRT7__bG1iRRu3qFW-pTJF8zktA&usqp=CAU"
+              alt="Party Patricia"
               className="h-32 w-32 rounded-full"
             />
             <div className="mt-3 text-2xl font-bold">Party Patricia</div>
@@ -50,7 +54,25 @@ const Testimonials = () => {
           </div>
           <div className="relative z-10">
             <div className="mt-8 text-6xl font-bold">
-              Join <br /> 1,000,000+ <br /> Partiers
+              Join <br />
+              {/* <CountUp end={1000000} separator="," suffix="+" duration={1} /> */}
+              <InView triggerOnce>
+                {({ inView, ref }) => (
+                  <span ref={ref}>
+                    {inView ? (
+                      <CountUp
+                        end={1000000}
+                        separator=","
+                        suffix="+"
+                        duration={1}
+                      />
+                    ) : (
+                      <span>69</span>
+                    )}
+                  </span>
+                )}
+              </InView>
+              <br /> Partiers
             </div>
             <div className="mt-6 text-2xl font-normal">
               You'll never have to worry about party planning again. Let us take
@@ -87,7 +109,7 @@ const Testimonials = () => {
           </div>
         </Marquee>
       </div>
-    </>
+    </section>
   );
 };
 
