@@ -2,7 +2,6 @@ import { useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { RxDotFilled } from "react-icons/rx";
 
-import { useStateContext } from "../../context/StateContext";
 import { slide_images } from "../../data";
 
 const Carousel = () => {
