@@ -23,21 +23,21 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className=" top-0 left-0 w-full">
-        <div className="md:flex md:px-10 items-center justify-between py-4 px-7">
+      <div className="">
+        <div className="flex w-full items-center justify-between p-4">
           {/* logo */}
           <div className="mr-1 pt-2">
             <Link to="/">
               <img
                 src={partylogo}
                 alt="Logo"
-                className="sm:h-9 relative z-10 mr-3 h-20"
+                className="relative z-10 mr-3 h-30 sm:h-9"
               />
             </Link>
           </div>
           {/* links */}
-          <div className="md:flex md:items-center text-white">
-            <div className="text-2xl">
+          <div className=" items-center  text-white">
+            <div className="flex text-xl">
               <div className="md:ml-8">
                 <NavLink
                   to="/About"
@@ -84,13 +84,13 @@ const Navbar = () => {
           </div>
 
           {/*shopping cart */}
-          <div className="md:order-3 flex text-white">
+          <div className="flex text-white md:order-3">
             <button
               type="button"
               onClick={() => {
                 setIsShowing((isShowing) => !isShowing);
               }}
-              className=" md:mr-0 relative z-10 mx-5 mr-3 px-5 py-2.5 text-6xl"
+              className=" relative z-10 mx-5 mr-3 px-5 py-2.5 text-6xl md:mr-0"
             >
               <HiOutlineShoppingBag className="hover:text-pink-600" />
               <span className="absolute top-12 rounded-full border-4 border-white bg-pink-600 px-2 text-center text-lg font-semibold">

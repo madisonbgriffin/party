@@ -6,7 +6,7 @@
 
 @layer base {
   .glass {
-    @apply from-white/10 to-white/0 backdrop-blur-md rounded-full border-2 border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.37)]
+    @apply rounded-full border-2 border-white/20 from-white/10 to-white/0 shadow-[0_8px_32px_rgba(0,0,0,0.37)] backdrop-blur-md;
   }
 }
 
@@ -15,11 +15,9 @@
 }
 
 body {
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 .btn-primary {
   @apply mt-10 mr-2 mb-2 rounded-full border-4 border-current bg-gradient-to-l from-slate-500/50 via-slate-300/50 to-slate-100/50 px-10 py-5 text-center text-5xl font-medium hover:border-white;
 }
-
-

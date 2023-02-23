@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "react-loading-skeleton/dist/skeleton.css";
 import { Route, Routes } from "react-router-dom";
 
 import { Footer, Navbar, Notfound } from "./components";

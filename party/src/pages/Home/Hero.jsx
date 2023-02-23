@@ -11,8 +11,8 @@ const Hero = () => {
   };
 
   return (
-    <section className=" mx-auto min-h-screen py-16">
-      <div className="grid grid-cols-2 gap-1">
+    <section className=" mx-auto py-10">
+      <div className="grid lg:grid-cols-2">
         <div className=" relative z-10 text-white">
           <div className=" text-7xl font-black">
             THE PERFECT PARTY ALL IN ONE BOX
@@ -31,7 +31,7 @@ const Hero = () => {
           </button>
         </div>
         <div className="z-10  mx-20">
-          <img src={gift3d} alt="Gift" />
+          <img className= "object-cover" src={gift3d} alt="Gift" />
         </div>
         <div className="absolute top-0 left-0 z-0 h-1/2 w-1/2 rounded-full bg-[#D3ACF1] opacity-[0.84] blur-[130px]" />
         <div className="absolute top-0 right-0 z-0 h-1/2 w-1/2 rounded-full bg-[#F97FC8] opacity-[0.94] blur-[130px]" />
