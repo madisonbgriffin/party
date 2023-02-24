@@ -113,7 +113,7 @@ const Testimonials = () => {
   // }, []);
 
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <SkeletonTheme baseColor="#9940EB" highlightColor="#8b25e8">
         <div className="container mx-auto py-16">
           {/* Left-side swirl image */}

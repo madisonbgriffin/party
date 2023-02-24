@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { FiMenu } from "react-icons/fi";
 import { HiOutlineSearch, HiSearch } from "react-icons/hi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { NavLink, Link } from "react-router-dom";
@@ -20,34 +22,36 @@ const normalSearch = "mx-5 z-10 relative hover:text-pink-600";
 
 const Navbar = () => {
   const { totalQuantities, setQuery, setIsShowing } = useStateContext();
-
+  const [open, setOpen] = useState(false);
   return (
     <nav>
       <div className="">
-        <div className="flex w-full items-center justify-between p-4">
+        <div className="flex w-full flex-wrap items-center justify-between p-4">
           {/* logo */}
           <div className="mr-1 pt-2">
             <Link to="/">
-              <img
-                src={partylogo}
-                alt="Logo"
-                className="relative z-10 mr-3 h-30 sm:h-9"
-              />
+              <img src={partylogo} alt="Logo" className="relative z-10 mr-3 h-20"/>
             </Link>
           </div>
+          <FiMenu
+            className="relative z-10 block h-8 w-8 cursor-pointer text-white lg:hidden"
+            onClick={() => setOpen(!open)}
+          ></FiMenu>
           {/* links */}
-          <div className=" items-center  text-white">
-            <div className="flex text-xl">
-              <div className="md:ml-8">
-                <NavLink
-                  to="/About"
-                  className={({ isActive }) =>
-                    isActive ? activeLink : normalLink
-                  }
-                >
-                  About
-                </NavLink>
-              </div>
+          <div
+            className={`${
+              open ? "block" : "hidden"
+            } w-full text-white lg:flex lg:w-auto lg:items-center items-end`}
+          >
+            <div className="lg flex flex-col lg:flex-row lg:justify-between lg:text-xl items-end">
+              <NavLink
+                to="/About"
+                className={({ isActive }) =>
+                  isActive ? activeLink : normalLink
+                }
+              >
+                About
+              </NavLink>
               <NavLink
                 to="/Shop"
                 className={({ isActive }) =>
@@ -80,17 +84,32 @@ const Navbar = () => {
                   <NavbarSearch />
                 </Popover.Panel>
               </Popover>
+              <div className="flex text-white lg:hidden">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsShowing((isShowing) => !isShowing);
+                  }}
+                  className=" relative z-10 mx-5 mr-3 px-5 py-2.5 text-6xl"
+                >
+                  <HiOutlineShoppingBag className="hover:text-pink-600" />
+                  <span className="absolute top-12 rounded-full border-4 border-white bg-pink-600 px-2 text-center text-xs font-semibold">
+                    {totalQuantities}
+                  </span>
+                </button>
+                {setIsShowing && <Cart />}
+              </div>
             </div>
           </div>
 
           {/*shopping cart */}
-          <div className="flex text-white md:order-3">
+          <div className="hidden text-white lg:flex">
             <button
               type="button"
               onClick={() => {
                 setIsShowing((isShowing) => !isShowing);
               }}
-              className=" relative z-10 mx-5 mr-3 px-5 py-2.5 text-6xl md:mr-0"
+              className=" relative z-10 mx-5 mr-3 px-5 py-2.5 text-6xl"
             >
               <HiOutlineShoppingBag className="hover:text-pink-600" />
               <span className="absolute top-12 rounded-full border-4 border-white bg-pink-600 px-2 text-center text-lg font-semibold">
