@@ -37,16 +37,16 @@ const Navbar = () => {
           </Link>
         </div>
         <FiMenu
-          className="relative z-10 block h-8 w-8 cursor-pointer text-white lg:hidden"
+          className="relative z-10 block h-8 w-8 cursor-pointer text-white md:hidden"
           onClick={() => setOpen(!open)}
         ></FiMenu>
         {/* links */}
         <div
           className={`${
             open ? "block" : "hidden"
-          } w-full items-end text-white lg:flex lg:w-auto lg:items-center`}
+          } w-full items-end text-white md:flex md:w-auto md:items-center`}
         >
-          <div className="lg flex flex-col items-end lg:flex-row lg:justify-between lg:text-xl">
+          <div className="flex flex-col items-end md:flex-row md:justify-between md:text-xl">
             <NavLink
               to="/About"
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
@@ -81,13 +81,13 @@ const Navbar = () => {
                 <NavbarSearch />
               </Popover.Panel>
             </Popover>
-            <div className="flex text-white lg:hidden">
+            <div className="flex text-white md:hidden">
               <button
                 type="button"
                 onClick={() => {
                   setIsShowing((isShowing) => !isShowing);
                 }}
-                className=" relative z-10 mx-5 mr-3 px-5 py-2.5 text-6xl"
+                className="relative z-10 mx-5 px-5 py-2.5 text-6xl"
               >
                 <HiOutlineShoppingBag className="hover:text-pink-600" />
                 <span className="absolute top-12 rounded-full border-4 border-white bg-pink-600 px-2 text-center text-xs font-semibold">
@@ -100,13 +100,13 @@ const Navbar = () => {
         </div>
 
         {/*shopping cart */}
-        <div className="hidden text-white lg:flex">
+        <div className="hidden text-white md:flex">
           <button
             type="button"
             onClick={() => {
               setIsShowing((isShowing) => !isShowing);
             }}
-            className=" relative z-10 mx-5 mr-3 px-5 py-2.5 text-6xl"
+            className="relative z-10 mx-5 px-5 py-2.5 text-6xl"
           >
             <HiOutlineShoppingBag className="hover:text-pink-600" />
             <span className="absolute top-12 rounded-full border-4 border-white bg-pink-600 px-2 text-center text-lg font-semibold">

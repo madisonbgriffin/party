@@ -1,9 +1,9 @@
 const Benefits = () => {
   return (
-    <div>
+    <section className="py-16">
       <div>Here are the Benefits</div>
       <div>Benefit mapper</div>
-    </div>
+    </section>
   );
 };
 

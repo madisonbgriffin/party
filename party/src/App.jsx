@@ -10,9 +10,9 @@ import { About, Contact, Home, Shop } from "./pages";
 const App = () => {
   return (
     <StateContext>
-      <div className="bg-gradient-to-b from-[#5400BF] to-[#1D0043]">
+      <div className="relative overflow-x-hidden bg-gradient-to-b from-[#5400BF] to-[#1D0043]">
         <div className="container mx-auto">
-          <div className="lg:mx-24">
+          <div className="p-5 lg:p-0 lg:mx-20 xl:mx-24">
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
