@@ -24,19 +24,17 @@ const featureData = [
 const Features = () => {
   return (
     <section className="py-16 text-white">
-      <div className="grid grid-cols-2 gap-8">
         {featureData.map((feature, index) => (
-        <div key={index} className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center justify-center mb-12`}>
+        <div key={index} className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center justify-center mb-12 glass rounded-[50px] p-8`}>
           <div className="w-1/2 lg:w-2/5 p-4">
             <h2 className="text-3xl font-bold mb-4">{feature.title}</h2>
             <p className="text-gray-700">{feature.desc}</p>
           </div>
           <div className="w-1/2 lg:w-3/5 p-4">
-            <img src={feature.image} alt={feature.title} className="rounded-lg shadow-md" />
+            <img src={feature.image} alt={feature.title} className="rounded-[50px] shadow-md mx-auto" />
           </div>
         </div>
       ))}
-      </div>
     </section>
   );
 };

@@ -12,7 +12,7 @@ const App = () => {
     <StateContext>
       <div className="relative overflow-x-hidden bg-gradient-to-b from-[#5400BF] to-[#1D0043]">
         <div className="container mx-auto">
-          <div className="p-5 lg:p-0 lg:mx-20 xl:mx-24">
+          <div className="lg:mx-20 xl:mx-24">
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -21,9 +21,9 @@ const App = () => {
               <Route path="/Contact" element={<Contact />} />
               <Route path="*" element={<Notfound />} />
             </Routes>
-            <Footer />
           </div>
         </div>
+        <Footer />
       </div>
     </StateContext>
   );

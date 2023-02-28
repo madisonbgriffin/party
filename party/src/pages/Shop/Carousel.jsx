@@ -27,32 +27,32 @@ const Carousel = () => {
   }
 
   return (
-    <section className="relative p-16">
+    <section className="relative py-12 lg:py-14 ">
       <button type="button">
         <HiChevronLeft
           onClick={prevSlide}
-          className="glass bg-gradient-to-135 absolute top-1/2 -left-5 -translate-y-1/2 text-7xl text-white hover:bg-pink-600"
+          className="glass bg-gradient-to-135 absolute top-40 left-5 lg:top-1/2 lg:-left-5 -translate-y-1/2 text-5xl lg:text-7xl text-white hover:bg-pink-600"
         />
       </button>
       <button type="button">
         <HiChevronRight
           onClick={nextSlide}
-          className="glass bg-gradient-to-135 absolute top-1/2 -right-5 -translate-y-1/2 text-7xl text-white hover:bg-pink-600"
+          className="glass bg-gradient-to-135 absolute top-40 right-5 lg:top-1/2 lg:-right-5 -translate-y-1/2 text-5xl lg:text-7xl text-white hover:bg-pink-600"
         />
       </button>
       {slide_images.map((slider, index) => (
         <div className="flex justify-center" key={index}>
           {index === currentSlide && (
             <>
-              <div className="h-[60vh] w-3/4 rounded-[50px] bg-purple-600 p-5">
+              <div className="lg:h-[60vh] lg:w-3/4 w-80 h-60 rounded-[50px] bg-purple-600 p-5">
                 <div
                   style={{ backgroundImage: `url(${slider.image})` }}
                   className="h-full w-full rounded-[50px] bg-cover bg-center"
                   title={`${slider.title} Slide`}
                 ></div>
               </div>
-              <div className="glass absolute left-24 bottom-16 z-10 h-1/3 w-1/4 rounded-[50px] text-white">
-                <h1 className="mt-5 text-center text-4xl font-bold">
+              <div className="glass absolute left-24 bottom-16 z-10 lg:h-1/3 lg:w-1/4 h-1/4 w-1/2 rounded-[50px] text-white">
+                <h1 className="mt-5 text-center text-3xl font-bold">
                   {slider.title}
                 </h1>
                 <p className="ml-10 mt-3 text-xl font-normal">
