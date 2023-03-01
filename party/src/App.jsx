@@ -1,11 +1,10 @@
-import { useState } from "react";
-import "react-loading-skeleton/dist/skeleton.css";
-import { Route, Routes } from "react-router-dom";
+import "react-loading-skeleton/dist/skeleton.css"
+import { Route, Routes } from "react-router-dom"
 
-import { Footer, Navbar, Notfound } from "./components";
-import { StateContext } from "./context/StateContext";
-import "./index.css";
-import { About, Contact, Home, Shop } from "./pages";
+import { Footer, Navbar, Notfound } from "./components"
+import { StateContext } from "./context/StateContext"
+import "./index.css"
+import { About, Contact, Home, Shop } from "./pages"
 
 const App = () => {
   return (
@@ -26,7 +25,7 @@ const App = () => {
         <Footer />
       </div>
     </StateContext>
-  );
-};
+  )
+}
 
-export default App;
+export default App

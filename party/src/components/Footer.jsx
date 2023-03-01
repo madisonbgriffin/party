@@ -1,22 +1,36 @@
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"
+import { useNavigate } from "react-router-dom"
 
-import { partylogo } from "../assets";
+import { partylogo } from "../assets"
 
 const Footer = () => {
+  const navigate = useNavigate()
+
+  const homePage = () => {
+    navigate("/")
+  }
   return (
-    <footer className="bg-[#190039] text-white opacity-70">
+    <footer className="bg-[#190039]/[.70] text-white">
       <div className="container mx-auto py-16">
-        <div className="lg:mx-30 mx-5 p-5 text-center lg:p-1 lg:text-left">
-          <img className="mx-auto mb-8 h-40" src={partylogo} alt="Logo" />
-          <div className="grid gap-4 lg:gap-12 lg:grid-cols-3">
+        <div className=" p-5 text-center lg:p-1 lg:text-left">
+          <img
+            className="mx-auto mb-8 h-40 cursor-pointer"
+            src={partylogo}
+            alt="Logo"
+            onClick={homePage}
+          />
+          <div className="grid gap-4 lg:grid-cols-3 lg:gap-12">
             <div className="items-center justify-center sm:items-start">
-              <h3 className="mb-4 font-bold uppercase text-white text-lg">About us</h3>
+              <h3 className="mb-4 text-lg font-bold uppercase text-white">
+                About us
+              </h3>
               <p className="mb-4 text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-                ea asperiores neque qui, quod ducimus nostrum molestias
-                quibusdam reprehenderit doloribus?
+                Our founders started Party in a Box because we believe that
+                celebrating life's milestones should be easy and fun. That's why
+                we've created a product that makes party planning a breeze, so
+                you can focus on enjoying the moment with your loved ones.
               </p>
-              <div className="flex items-center space-x-4 text-3xl justify-center lg:justify-start">
+              <div className="flex items-center justify-center space-x-4 text-3xl lg:justify-start">
                 <a href="#" target="_blank" rel="noopener noreferrer">
                   <FaFacebook className="text-white" />
                 </a>
@@ -33,17 +47,17 @@ const Footer = () => {
                 Contact Us
               </h3>
               <p className="mb-2">
-                <span className="font-bold">Address:</span> 123 Main Street,
-                Suite 200, Anytown USA
+                <span className="font-bold">Address:</span> 575 Lambuth Blvd.,
+                Jackson, TN, USA
               </p>
               <p className="mb-2">
-                <span className="font-bold">Phone:</span> (555) 555-5555
+                <span className="font-bold">Phone:</span> (731) 420-6969
               </p>
               <p className="mb-2">
-                <span className="font-bold">Email:</span> info@example.com
+                <span className="font-bold">Email:</span> bigmacsparty@gmail.com
               </p>
               <p className="mb-2">
-                <span className="font-bold">Hours:</span> Mon-Fri 9am-5pm
+                <span className="font-bold">Hours:</span> Mon-Fri 6am-9pm
               </p>
             </div>
             <div className="text-lg">
@@ -67,7 +81,7 @@ const Footer = () => {
         © BIG MACS 2023
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

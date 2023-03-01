@@ -1,9 +1,17 @@
-const Contact = () => (
-  <>
-    <h1 className="text-9xl font-bold underline flex justify-center text-white">
-      Contact
-    </h1>
-  </>
-);
+import { useEffect } from "react"
 
-export default Contact;
+import { ContactInfo, ContactForm } from "../../pages"
+
+const Contact = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+  }, [])
+  return (
+    <>
+      <ContactInfo />
+      <ContactForm />
+    </>
+  )
+}
+
+export default Contact

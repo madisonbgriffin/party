@@ -1,7 +1,7 @@
-import { HiChevronUp } from "react-icons/hi";
+import { HiChevronUp } from "react-icons/hi"
 
-import { Disclosure } from "@headlessui/react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Disclosure } from "@headlessui/react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const faqData = [
   {
@@ -29,19 +29,19 @@ const faqData = [
     answer:
       "Yes, but it's just a never-ending Zoom meeting with people you don't really like.",
   },
-];
+]
 
 const FAQ = () => {
   return (
-    <section className=" p-5 py-13 text-white">
-      <h1 className="text-center text-4xl lg:text-6xl font-bold">FAQ</h1>
+    <section className=" py-13 p-5 text-white">
+      <h1 className="text-center text-4xl font-bold lg:text-6xl">FAQ</h1>
       {faqData.map((faq, index) => (
         <div key={index}>
           <hr className="my-8 border-b-2" />
           <Disclosure>
             {({ open }) => (
               <>
-                <Disclosure.Button className="glass flex w-full justify-between py-4 px-8 text-2xl lg:text-3xl font-medium">
+                <Disclosure.Button className="glass flex w-full justify-between py-4 px-8 text-2xl font-medium lg:text-3xl">
                   <span className="my-auto">{faq.question}</span>
                   <HiChevronUp
                     className={`${open ? "rotate-180 transform" : ""} text-5xl`}
@@ -72,10 +72,10 @@ const FAQ = () => {
       ))}
       <hr className="mt-8 border-b-2" />
     </section>
-  );
-};
+  )
+}
 
-export default FAQ;
+export default FAQ
 
 //TODO: make an open animation using framer-motion
 //? Maybe create an FAQ page for more questions with a search function?

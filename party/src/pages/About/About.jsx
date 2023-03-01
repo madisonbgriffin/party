@@ -1,15 +1,22 @@
-import { Story, Start, Mission, HQ, Process, Awards, Team } from "../../pages";
+import { useEffect } from "react"
 
-const About = () => (
-  <>
-    <Story />
-    <Start />
-    <Mission />
-    <HQ />
-    <Process />
-    <Awards />
-    <Team />
-  </>
-);
+import { Story, Start, Mission, HQ, Process, Awards, Team } from "../../pages"
 
-export default About;
+const About = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+  }, [])
+  return (
+    <>
+      <Story />
+      <Start />
+      <Mission />
+      <HQ />
+      <Process />
+      <Awards />
+      <Team />
+    </>
+  )
+}
+
+export default About

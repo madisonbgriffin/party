@@ -411,7 +411,7 @@ export const names = [
     id: "103",
     title: "Avery Rios",
   },
-];
+]
 
 export const cartItems = [
   {
@@ -439,7 +439,7 @@ export const cartItems = [
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
   // More products...
-];
+]
 
 export const slide_images = [
   {
@@ -502,4 +502,4 @@ export const slide_images = [
     image:
       "https://www.gannett-cdn.com/presto/2022/04/28/NPPP/7c15e337-50af-443b-990e-467b327e481a-Bodega_Cinco_handout.jpg?width=660&height=440&fit=crop&format=pjpg&auto=webp",
   },
-];
+]

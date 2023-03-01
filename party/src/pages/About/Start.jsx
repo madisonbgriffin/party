@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react"
 
 const Start = () => {
-  return (
-    <div>Start</div>
-  )
+  return <div>Start</div>
 }
 
 export default Start

@@ -1,28 +1,28 @@
-import { useState } from "react";
-import { FiMenu } from "react-icons/fi";
-import { HiOutlineSearch, HiSearch } from "react-icons/hi";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
-import { NavLink, Link } from "react-router-dom";
+import { useState } from "react"
+import { FiMenu } from "react-icons/fi"
+import { HiOutlineSearch, HiSearch } from "react-icons/hi"
+import { HiOutlineShoppingBag } from "react-icons/hi2"
+import { NavLink, Link } from "react-router-dom"
 
-import { Transition, Popover } from "@headlessui/react";
+import { Transition, Popover } from "@headlessui/react"
 
-import { Cart, NavbarSearch } from ".";
-import { partylogo } from "../assets";
-import { useStateContext } from "../context/StateContext";
+import { Cart, NavbarSearch } from "."
+import { partylogo } from "../assets"
+import { useStateContext } from "../context/StateContext"
 
 // Navbar styling classes
 const activeLink =
-  "underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative";
+  "underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative"
 const normalLink =
-  "hover:underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative";
+  "hover:underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative"
 
 // search bar styling classes
-const activeSearch = "mx-5 z-10 relative text-pink-600";
-const normalSearch = "mx-5 z-10 relative hover:text-pink-600";
+const activeSearch = "mx-5 z-10 relative text-pink-600"
+const normalSearch = "mx-5 z-10 relative hover:text-pink-600"
 
 const Navbar = () => {
-  const { totalQuantities, setQuery, setIsShowing } = useStateContext();
-  const [open, setOpen] = useState(false);
+  const { totalQuantities, setQuery, setIsShowing } = useStateContext()
+  const [open, setOpen] = useState(false)
   return (
     <nav>
       <div className="flex w-full flex-wrap items-center justify-between p-4">
@@ -69,7 +69,7 @@ const Navbar = () => {
               as="div"
               className="relative flex text-left"
               onClick={() => {
-                setQuery("");
+                setQuery("")
               }}
             >
               <Popover.Button
@@ -85,7 +85,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={() => {
-                  setIsShowing((isShowing) => !isShowing);
+                  setIsShowing((isShowing) => !isShowing)
                 }}
                 className="relative z-10 mx-5 px-5 py-2.5 text-6xl"
               >
@@ -104,7 +104,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={() => {
-              setIsShowing((isShowing) => !isShowing);
+              setIsShowing((isShowing) => !isShowing)
             }}
             className="relative z-10 mx-5 px-5 py-2.5 text-6xl"
           >
@@ -117,7 +117,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

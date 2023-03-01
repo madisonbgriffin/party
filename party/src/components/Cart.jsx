@@ -1,12 +1,12 @@
-import { Fragment } from "react";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { HiOutlineXMark, HiOutlineShoppingBag } from "react-icons/hi2";
-import { TiDeleteOutline } from "react-icons/ti";
+import { Fragment } from "react"
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
+import { HiOutlineXMark, HiOutlineShoppingBag } from "react-icons/hi2"
+import { TiDeleteOutline } from "react-icons/ti"
 
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react"
 
-import { useStateContext } from "../context/StateContext";
-import { cartItems } from "../data";
+import { useStateContext } from "../context/StateContext"
+import { cartItems } from "../data"
 
 const Cart = () => {
   const {
@@ -18,7 +18,7 @@ const Cart = () => {
     onAdd,
     isShowing,
     setIsShowing,
-  } = useStateContext();
+  } = useStateContext()
 
   return (
     <Transition show={isShowing} as={Fragment}>
@@ -49,7 +49,7 @@ const Cart = () => {
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
-                    <div className="sm:px-6 flex-1 overflow-y-auto py-6 px-4">
+                    <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-lg font-medium text-gray-900">
                           Shopping cart
@@ -62,7 +62,7 @@ const Cart = () => {
                             type="button"
                             className="-m-2 p-2 text-gray-400 hover:text-gray-500"
                             onClick={() => {
-                              setIsShowing((isShowing) => !isShowing);
+                              setIsShowing((isShowing) => !isShowing)
                             }}
                           >
                             <span className="sr-only">Close panel</span>
@@ -142,7 +142,7 @@ const Cart = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="sm:px-6 border-t border-gray-200 py-6 px-4">
+                    <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
                         <p>$262.00</p>
@@ -165,7 +165,7 @@ const Cart = () => {
                             type="button"
                             className="font-medium text-pink-600 hover:text-pink-500"
                             onClick={() => {
-                              setIsShowing((isShowing) => !isShowing);
+                              setIsShowing((isShowing) => !isShowing)
                             }}
                           >
                             Continue Shopping
@@ -182,7 +182,7 @@ const Cart = () => {
         </div>
       </Dialog>
     </Transition>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

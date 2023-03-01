@@ -1,17 +1,17 @@
-import { HiChevronRight } from "react-icons/hi2";
-import { useNavigate } from "react-router-dom";
+import { HiChevronRight } from "react-icons/hi2"
+import { useNavigate } from "react-router-dom"
 
-import { gift, gift3d, gifthand, partyboy, gift3d2 } from "../../assets";
+import { gift, gift3d, gifthand, partyboy, gift3d2 } from "../../assets"
 
 const Hero = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const shopPage = () => {
-    navigate("/Shop");
-  };
+    navigate("/Shop")
+  }
 
   return (
-    <section className="p-5 lg:p-0 py-14 lg:py-16">
+    <section className="p-5 py-14 lg:p-0 lg:py-16">
       <div className="grid lg:grid-cols-2">
         <div className="relative z-10 text-white">
           {/* Left column */}
@@ -32,14 +32,14 @@ const Hero = () => {
           </button>
         </div>
         {/* Right column */}
-        <div className="z-10 w-fit mx-14 lg:mx-6 xl:mx-16 2xl:mx-20">
+        <div className="z-10 mx-14 w-fit lg:mx-6 xl:mx-16 2xl:mx-20">
           <img src={gift3d} alt="Gift" />
         </div>
         <div className="absolute top-0 left-0 z-0 h-[50vh] w-1/2 rounded-full bg-[#D3ACF1] opacity-[0.84] blur-[130px]" />
         <div className="absolute top-0 right-0 z-0 h-[50vh] w-1/2 rounded-full bg-[#F97FC8] opacity-[0.94] blur-[130px]" />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

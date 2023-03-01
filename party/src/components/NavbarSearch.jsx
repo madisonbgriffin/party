@@ -1,30 +1,30 @@
-import { HiOutlineSearch, HiSearch } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
+import { HiOutlineSearch, HiSearch } from "react-icons/hi"
+import { useNavigate } from "react-router-dom"
 
-import { Combobox, Popover } from "@headlessui/react";
-import Fuse from "fuse.js";
+import { Combobox, Popover } from "@headlessui/react"
+import Fuse from "fuse.js"
 
-import { useStateContext } from "../context/StateContext";
-import { names } from "../data";
+import { useStateContext } from "../context/StateContext"
+import { names } from "../data"
 
 const NavbarSearch = () => {
-  const { setQuery, query } = useStateContext("");
-  const navigate = useNavigate();
+  const { setQuery, query } = useStateContext("")
+  const navigate = useNavigate()
 
   const fuse = new Fuse(names, {
     keys: ["title"],
     includeScore: true,
-  });
+  })
 
-  const results = fuse.search(query);
-  const nameResults = results.map((result) => result.item);
+  const results = fuse.search(query)
+  const nameResults = results.map((result) => result.item)
 
   return (
     <Combobox
       as="div"
       onChange={(name) => {
-        setQuery("");
-        navigate(`/${name.id}`);
+        setQuery("")
+        navigate(`/${name.id}`)
       }}
       className="relative text-black"
     >
@@ -33,7 +33,7 @@ const NavbarSearch = () => {
           <HiOutlineSearch className="text-3xl text-pink-600" />
           <Combobox.Input
             onChange={(e) => {
-              setQuery(e.target.value);
+              setQuery(e.target.value)
             }}
             className="flex h-10 w-full items-center rounded-md px-4 py-2 text-2xl focus:outline-0"
             placeholder="Search..."
@@ -68,7 +68,7 @@ const NavbarSearch = () => {
         )}
       </div>
     </Combobox>
-  );
-};
+  )
+}
 
-export default NavbarSearch;
+export default NavbarSearch

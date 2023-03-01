@@ -1,29 +1,29 @@
-import { useState } from "react";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import { RxDotFilled } from "react-icons/rx";
+import { useState } from "react"
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi"
+import { RxDotFilled } from "react-icons/rx"
 
-import { slide_images } from "../../data";
+import { slide_images } from "../../data"
 
 const Carousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   const nextSlide = () => {
     setCurrentSlide(
       currentSlide === slide_images.length - 1 ? 0 : currentSlide + 1
-    );
-  };
+    )
+  }
   const prevSlide = () => {
     setCurrentSlide(
       currentSlide === 0 ? slide_images.length - 1 : currentSlide - 1
-    );
-  };
+    )
+  }
 
   const goToSlide = (slideIndex) => {
-    setCurrentSlide(slideIndex);
-  };
+    setCurrentSlide(slideIndex)
+  }
 
   if (!Array.isArray(slide_images) || slide_images.length <= 0) {
-    return null;
+    return null
   }
 
   return (
@@ -31,27 +31,27 @@ const Carousel = () => {
       <button type="button">
         <HiChevronLeft
           onClick={prevSlide}
-          className="glass bg-gradient-to-135 absolute top-40 left-5 lg:top-1/2 lg:-left-5 -translate-y-1/2 text-5xl lg:text-7xl text-white hover:bg-pink-600"
+          className="glass bg-gradient-to-135 absolute top-40 left-5 -translate-y-1/2 text-5xl text-white hover:bg-pink-600 lg:top-1/2 lg:-left-5 lg:text-7xl"
         />
       </button>
       <button type="button">
         <HiChevronRight
           onClick={nextSlide}
-          className="glass bg-gradient-to-135 absolute top-40 right-5 lg:top-1/2 lg:-right-5 -translate-y-1/2 text-5xl lg:text-7xl text-white hover:bg-pink-600"
+          className="glass bg-gradient-to-135 absolute top-40 right-5 -translate-y-1/2 text-5xl text-white hover:bg-pink-600 lg:top-1/2 lg:-right-5 lg:text-7xl"
         />
       </button>
       {slide_images.map((slider, index) => (
         <div className="flex justify-center" key={index}>
           {index === currentSlide && (
             <>
-              <div className="lg:h-[60vh] lg:w-3/4 w-80 h-60 rounded-[50px] bg-purple-600 p-5">
+              <div className="h-60 w-80 rounded-[50px] bg-purple-600 p-5 lg:h-[60vh] lg:w-3/4">
                 <div
                   style={{ backgroundImage: `url(${slider.image})` }}
                   className="h-full w-full rounded-[50px] bg-cover bg-center"
                   title={`${slider.title} Slide`}
                 ></div>
               </div>
-              <div className="glass absolute left-24 bottom-16 z-10 lg:h-1/3 lg:w-1/4 h-1/4 w-1/2 rounded-[50px] text-white">
+              <div className="glass absolute left-24 bottom-16 z-10 h-1/4 w-1/2 rounded-[50px] text-white lg:h-1/3 lg:w-1/4">
                 <h1 className="mt-5 text-center text-3xl font-bold">
                   {slider.title}
                 </h1>
@@ -82,7 +82,7 @@ const Carousel = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Carousel;
+export default Carousel

@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
-import CountUp from "react-countup";
-import Marquee from "react-fast-marquee";
-import { InView } from "react-intersection-observer";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { useState, useEffect } from "react"
+import CountUp from "react-countup"
+import { InView } from "react-intersection-observer"
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 
-import axios from "axios";
+import axios from "axios"
 
-import { swirl } from "../../assets";
+import { swirl } from "../../assets"
 
 const quotes = [
   {
@@ -81,39 +80,28 @@ const quotes = [
     profilepic:
       "https://cdn.dailyvoice.com/image/upload/c_fill,dpr_2,f_auto,q_auto:eco,w_640/Screenshot_966_n77eqe",
   },
-];
+]
 
 const Testimonials = () => {
-  const [quotesToShow, setQuotesToShow] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [quotesToShow, setQuotesToShow] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const randomIndex1 = Math.floor(Math.random() * quotes.length);
-    let randomIndex2 = Math.floor(Math.random() * quotes.length);
+    const randomIndex1 = Math.floor(Math.random() * quotes.length)
+    let randomIndex2 = Math.floor(Math.random() * quotes.length)
     while (randomIndex2 === randomIndex1) {
-      randomIndex2 = Math.floor(Math.random() * quotes.length);
+      randomIndex2 = Math.floor(Math.random() * quotes.length)
     }
-    const randomQuote1 = quotes[randomIndex1];
-    const randomQuote2 = quotes[randomIndex2];
+    const randomQuote1 = quotes[randomIndex1]
+    const randomQuote2 = quotes[randomIndex2]
     setTimeout(() => {
-      setQuotesToShow([randomQuote1, randomQuote2]);
-      setIsLoading(false);
-    }, 3000);
-  }, []);
-
-  // useEffect(() => {
-  //   axios
-  //     .get("https://randomuser.me/api/")
-  //     .then((response) => {
-  //       console.log(response.data.results[0]);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
+      setQuotesToShow([randomQuote1, randomQuote2])
+      setIsLoading(false)
+    }, 3000)
+  }, [])
 
   return (
-    <section className=" p-5 lg:p-1 py-14 lg:py-16">
+    <section className="p-5 py-14 lg:py-16">
       <SkeletonTheme baseColor="#9940EB" highlightColor="#8b25e8">
         {/* Left-side swirl image */}
         <div className="absolute -left-48">
@@ -130,9 +118,9 @@ const Testimonials = () => {
 
         {/* Load quotes then render */}
         {isLoading ? (
-          <div className=" grid grid-cols-1 gap-10 text-white lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-10 text-white lg:grid-cols-3">
             {/* Loading first quote */}
-            <div className="glass relative z-10 rounded-[69px]">
+            <div className="glass relative z-10 rounded-[69px] p-8">
               <Skeleton circle className="h-32 w-32" />
               <div className="flex">
                 <div className="mt-3 flex-[0.66] text-2xl">
@@ -269,44 +257,9 @@ const Testimonials = () => {
             </div>
           )
         )}
-        
-        <Marquee gradient={false} speed={30}>
-          <div className="mt-16 flex h-20 lg:h-48 text-white brightness-0 invert ">
-            <img
-              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/74deb6ff-8857-4c03-9da1-4107c547bbc6/dfawn6v-399fc6d5-8dae-4fc4-86cd-b85bf614218f.png/v1/fill/w_1000,h_163,strp/nickelodeon_is_white_logo_png_by_janiyawestbrook_dfawn6v-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTYzIiwicGF0aCI6IlwvZlwvNzRkZWI2ZmYtODg1Ny00YzAzLTlkYTEtNDEwN2M1NDdiYmM2XC9kZmF3bjZ2LTM5OWZjNmQ1LThkYWUtNGZjNC04NmNkLWI4NWJmNjE0MjE4Zi5wbmciLCJ3aWR0aCI6Ijw9MTAwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19._TYtypH2yTLsiFciDZlJWGxVo1uZnTX_EVXXnz63lgE"
-              alt="Nickelodeon"
-              className=""
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
-              alt="McDonald's"
-              className=""
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png"
-              alt="Amazon"
-              className=""
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-              alt="Apple"
-              className=""
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/1960s_Gucci_Logo.svg/800px-1960s_Gucci_Logo.svg.png"
-              alt="Gucci"
-              className=""
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Logo_Toys_R_Us.svg/1280px-Logo_Toys_R_Us.svg.png"
-              alt="Toys R Us"
-              className=""
-            />
-          </div>
-        </Marquee>
       </SkeletonTheme>
     </section>
-  );
-};
+  )
+}
 
-export default Testimonials;
+export default Testimonials

@@ -1,14 +1,30 @@
-import { Hero, Testimonials, Benefits, Features, FAQ, CTA } from "../../pages";
+import { useEffect } from "react"
 
-const Contact = () => (
-  <>
-    <Hero />
-    <Testimonials />
-    <Benefits />
-    <Features />
-    <FAQ />
-    <CTA />
-  </>
-);
+import {
+  Hero,
+  Testimonials,
+  Benefits,
+  Features,
+  FAQ,
+  CTA,
+  Logos,
+} from "../../pages"
 
-export default Contact;
+const Home = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+  }, [])
+  return (
+    <>
+      <Hero />
+      <Testimonials />
+      <Logos />
+      <Benefits />
+      <Features />
+      <FAQ />
+      <CTA />
+    </>
+  )
+}
+
+export default Home

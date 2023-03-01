@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react"
 
 const Awards = () => {
-  return (
-    <div>Awards</div>
-  )
+  return <div>Awards</div>
 }
 
 export default Awards
