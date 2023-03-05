@@ -1,52 +1,61 @@
+import { money, clock, clean, family, balloons } from "../../assets";
+
+
 const benefits = [
   {
-    image: "https://via.placeholder.com/200x200/FF0000/FFFFFF",
-    title: "Benefit 1",
-    description: "Description of Benefit 1",
+    image: money,
+    title: "Affordable Quality",
+    description:
+      "Our products are designed with affordable yet high-quality materials, ensuring that you can throw an unforgettable party without breaking the bank.",
   },
   {
     image: "https://via.placeholder.com/200x200/FFFF00/000000",
-    title: "Benefit 2",
+    title: "Large Variety",
     description: "Description of Benefit 2",
   },
   {
-    image: "https://via.placeholder.com/200x200/00FF00/FFFFFF",
-    title: "Benefit 3",
+    image: clock,
+    title: "Quick Set Up",
     description: "Description of Benefit 3",
   },
   {
-    image: "https://via.placeholder.com/200x200/FF0000/FFFFFF",
-    title: "Benefit 4",
+    image: clean,
+    title: "Easy Clean Up",
     description: "Description of Benefit 4",
   },
   {
-    image: "https://via.placeholder.com/200x200/FFFF00/000000",
-    title: "Benefit 5",
+    image: family,
+    title: "All Ages",
     description: "Description of Benefit 5",
   },
   {
-    image: "https://via.placeholder.com/200x200/00FF00/FFFFFF",
-    title: "Benefit 6",
+    image: balloons,
+    title: "Customizable",
     description: "Description of Benefit 6",
   },
 ]
 
 const Benefits = () => {
   return (
-    <section className="py-16 text-white">
-      <h1 className="glass relative rounded-[69px] py-40 text-center text-6xl font-bold">
-        Here are the benefits
+    <section className="p-5 py-16 text-white">
+      <h1 className="glass relative rounded-[69px] py-32 text-center text-4xl font-bold lg:py-40 lg:text-6xl">
+        Here are the benefits:
       </h1>
-      <div className="relative bottom-24 z-10 mx-16 grid grid-cols-3 grid-rows-2 gap-4">
+      <div className="relative bottom-24 z-10 mx-16 grid grid-rows-2 gap-6 lg:gap-4 xl:grid-cols-2 2xl:grid-cols-3">
         {benefits.map((benefit, index) => (
-          <div key={index} className="glass rounded-[69px] p-16 text-center">
+          <div
+            key={index}
+            className="glass rounded-[69px] p-5 text-center lg:p-16"
+          >
             <img
               src={benefit.image}
               alt={benefit.title}
               className="mx-auto mb-4 rounded-2xl"
             />
-            <div className="mb-2 text-3xl font-bold">{benefit.title}</div>
-            <div className="text-lg">{benefit.description}</div>
+            <div className="mb-2 text-2xl font-bold lg:text-3xl">
+              {benefit.title}
+            </div>
+            <div className="text-sm lg:text-lg ">{benefit.description}</div>
           </div>
         ))}
       </div>
@@ -55,3 +64,7 @@ const Benefits = () => {
 }
 
 export default Benefits
+
+//TODO: styling and responsivenss
+//TODO: good icons
+//? tweak design?

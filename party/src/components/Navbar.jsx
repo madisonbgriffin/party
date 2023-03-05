@@ -4,7 +4,7 @@ import { HiOutlineSearch, HiSearch } from "react-icons/hi"
 import { HiOutlineShoppingBag } from "react-icons/hi2"
 import { NavLink, Link } from "react-router-dom"
 
-import { Transition, Popover } from "@headlessui/react"
+import { Popover } from "@headlessui/react"
 
 import { Cart, NavbarSearch } from "."
 import { partylogo } from "../assets"
@@ -12,13 +12,13 @@ import { useStateContext } from "../context/StateContext"
 
 // Navbar styling classes
 const activeLink =
-  "underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative"
+  "relative z-10 mx-5 text-2xl underline decoration-pink-600 decoration-4 underline-offset-8"
 const normalLink =
-  "hover:underline decoration-pink-600 decoration-4 underline-offset-8 mx-5 z-10 relative"
+  "relative z-10 mx-5 text-2xl decoration-pink-600 decoration-4 underline-offset-8 hover:underline"
 
 // search bar styling classes
-const activeSearch = "mx-5 z-10 relative text-pink-600"
-const normalSearch = "mx-5 z-10 relative hover:text-pink-600"
+const activeSearch = "relative z-10 mx-5 text-2xl text-pink-600"
+const normalSearch = "relative z-10 mx-5 text-2xl hover:text-pink-600"
 
 const Navbar = () => {
   const { totalQuantities, setQuery, setIsShowing } = useStateContext()
@@ -67,7 +67,7 @@ const Navbar = () => {
             </NavLink>
             <Popover
               as="div"
-              className="relative flex text-left"
+              className="relative my-auto flex text-left"
               onClick={() => {
                 setQuery("")
               }}
@@ -77,7 +77,7 @@ const Navbar = () => {
               >
                 <HiOutlineSearch />
               </Popover.Button>
-              <Popover.Panel className="absolute right-0 z-20 mt-11 w-72 origin-top-right rounded-md bg-white">
+              <Popover.Panel className="absolute right-0 z-20 mt-10 w-72 origin-top-right rounded-md bg-white">
                 <NavbarSearch />
               </Popover.Panel>
             </Popover>
@@ -121,3 +121,8 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+//TODO: edit styling and responsiveness
+//TODO: add cart interaction
+//? confetti on click effect?
+//? logo change?

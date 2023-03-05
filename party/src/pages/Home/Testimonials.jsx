@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import CountUp from "react-countup"
 import { InView } from "react-intersection-observer"
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 
 import axios from "axios"
 
@@ -84,182 +83,96 @@ const quotes = [
 
 const Testimonials = () => {
   const [quotesToShow, setQuotesToShow] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const randomIndex1 = Math.floor(Math.random() * quotes.length)
-    let randomIndex2 = Math.floor(Math.random() * quotes.length)
-    while (randomIndex2 === randomIndex1) {
-      randomIndex2 = Math.floor(Math.random() * quotes.length)
+    const randomIndexes = Array.from({ length: 2 }, () =>
+      Math.floor(Math.random() * quotes.length)
+    )
+    while (randomIndexes[0] === randomIndexes[1]) {
+      randomIndexes[1] = Math.floor(Math.random() * quotes.length)
     }
-    const randomQuote1 = quotes[randomIndex1]
-    const randomQuote2 = quotes[randomIndex2]
-    setTimeout(() => {
-      setQuotesToShow([randomQuote1, randomQuote2])
-      setIsLoading(false)
-    }, 3000)
+    const randomQuotes = randomIndexes.map((index) => quotes[index])
+    setQuotesToShow(randomQuotes)
   }, [])
 
   return (
-    <section className="p-5 py-14 lg:py-16">
-      <SkeletonTheme baseColor="#9940EB" highlightColor="#8b25e8">
-        {/* Left-side swirl image */}
-        <div className="absolute -left-48">
-          <img src={swirl} alt="swirl" className="relative top-36" />
-        </div>
-        {/* Right-side background circle with gradient */}
-        <div className="absolute -right-32">
-          <div className="relative bottom-72 z-0 h-[675px] w-[675px] rounded-[50%] bg-gradient-to-b from-[#C194EA] to-[#EE77C7]/[0.94] opacity-[0.75] blur-[3px]" />
-        </div>
-        {/* Right-side foreground circle with gradient */}
-        <div className="absolute right-72">
-          <div className="relative bottom-0 z-0 h-[475px] w-[475px] rounded-[50%] bg-gradient-to-b from-[#9940EB]/[0.54] to-[#F05EC0]/[0.68] opacity-[0.75] blur-[3px]" />
-        </div>
-
-        {/* Load quotes then render */}
-        {isLoading ? (
-          <div className="grid grid-cols-1 gap-10 text-white lg:grid-cols-3">
-            {/* Loading first quote */}
-            <div className="glass relative z-10 rounded-[69px] p-8">
-              <Skeleton circle className="h-32 w-32" />
-              <div className="flex">
-                <div className="mt-3 flex-[0.66] text-2xl">
-                  <Skeleton />
-                </div>
+    <section className="pt-14 lg:pt-16">
+      {/* Left-side swirl image */}
+      <div className="absolute -left-48">
+        <img src={swirl} alt="swirl" className="relative top-36" />
+      </div>
+      {/* Right-side background circle with gradient */}
+      <div className="absolute -right-32">
+        <div className="relative bottom-72 z-0 h-[675px] w-[675px] rounded-[50%] bg-gradient-to-b from-[#C194EA] to-[#EE77C7]/[0.94] opacity-[0.75] blur-[3px]" />
+      </div>
+      {/* Right-side foreground circle with gradient */}
+      <div className="absolute right-72">
+        <div className="relative bottom-0 z-0 h-[475px] w-[475px] rounded-[50%] bg-gradient-to-b from-[#9940EB]/[0.54] to-[#F05EC0]/[0.68] opacity-[0.75] blur-[3px]" />
+      </div>
+      {quotesToShow.length > 0 && (
+        <div className="grid grid-cols-1 gap-10 text-white md:grid-cols-4 2xl:grid-cols-3">
+          {quotesToShow.map((quote, index) => (
+            <div
+              key={index}
+              className="glass relative z-10 rounded-[69px] p-8 md:col-span-2 2xl:col-span-1"
+            >
+              <div className="aspect-square w-20 overflow-hidden rounded-full">
+                <img
+                  src={quote.profilepic}
+                  alt={quote.reviewer}
+                  className="h-full w-full object-cover object-center"
+                />
               </div>
-              <div className="flex">
-                <div className="mt-1 flex-[0.66] text-xl">
-                  <Skeleton />
-                </div>
-              </div>
-              <div className="mt-4 text-lg">
-                <Skeleton count={7} />
+              <div className="mt-3 text-2xl font-bold">{quote.reviewer}</div>
+              <div className="mt-1 text-xl font-medium">{quote.role}</div>
+              <div className="text-md mt-4 font-normal 2xl:text-lg">
+                “{quote.quote}”
               </div>
             </div>
-            {/* Loading second quote */}
-            <div className="glass relative z-10 rounded-[69px] p-8">
-              <Skeleton circle className="h-32 w-32" />
-              <div className="flex">
-                <div className="mt-3 flex-[0.66] text-2xl">
-                  <Skeleton />
-                </div>
-              </div>
-              <div className="flex">
-                <div className="mt-1 flex-[0.66] text-xl">
-                  <Skeleton />
-                </div>
-              </div>
-              <div className="mt-4 text-lg">
-                <Skeleton count={7} />
-              </div>
+          ))}
+          {/* Counter */}
+          <div className="relative z-10 order-first md:col-span-2 md:col-start-2 2xl:order-last 2xl:col-span-1">
+            <div className="mt-8 text-center text-6xl font-bold md:text-5xl xl:text-6xl 2xl:text-start">
+              <div>Join</div>
+              <InView triggerOnce>
+                {({ inView, ref }) => (
+                  <div className="mt-2" ref={ref}>
+                    {inView ? (
+                      <CountUp
+                        end={10000000}
+                        separator=","
+                        suffix="+"
+                        duration={1}
+                        delay={0.1}
+                        start={69}
+                      />
+                    ) : (
+                      <div className="mt-2">69</div>
+                    )}
+                  </div>
+                )}
+              </InView>
+              <div className="mt-2">Partiers</div>
             </div>
-            <div className="relative z-10">
-              <div className="mt-8 text-6xl">
-                <div className="flex">
-                  <div className="flex-[0.35]">
-                    <Skeleton />
-                  </div>
-                </div>
-                <Skeleton className="mt-2" />
-                <div className="mt-2 flex">
-                  <div className="flex-[0.6]">
-                    <Skeleton />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-6 text-2xl">
-                <Skeleton count={4} />
-              </div>
-              <div className="flex">
-                <div className="flex-[0.66]">
-                  <Skeleton className="mt-10 mr-2 mb-2 rounded-full px-6 py-3 text-center text-2xl" />
-                </div>
-              </div>
+            <div className="mt-6 text-2xl font-normal md:text-center 2xl:mx-0 2xl:text-start">
+              You'll never have to worry about party planning again. Let us take
+              care of the details while you sit back and enjoy the celebration!
+            </div>
+            <div className="flex justify-center 2xl:block">
+              <button
+                type="button"
+                className="glass mt-10 mr-2 mb-2 px-6 py-3 text-center text-2xl duration-200 ease-in-out hover:scale-110"
+              >
+                View more stories
+              </button>
             </div>
           </div>
-        ) : (
-          quotesToShow.length > 0 && (
-            <div className="grid grid-cols-1 gap-10 text-white lg:grid-cols-3">
-              {/* First quote */}
-              <div className="glass relative z-10 rounded-[69px] p-8">
-                <div className="h-32 w-32 overflow-hidden rounded-full">
-                  <img
-                    src={quotesToShow[0].profilepic}
-                    alt={quotesToShow[0].reviewer}
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-                <div className="mt-3 text-2xl font-bold">
-                  {quotesToShow[0].reviewer}
-                </div>
-                <div className="mt-1 text-xl font-medium">
-                  {quotesToShow[0].role}
-                </div>
-                <div className="mt-4 text-lg font-normal">
-                  “{quotesToShow[0].quote}”
-                </div>
-              </div>
-              {/* Second quote */}
-              <div className="glass relative z-10 rounded-[69px] p-8">
-                <div className="h-32 w-32 overflow-hidden rounded-full">
-                  <img
-                    src={quotesToShow[1].profilepic}
-                    alt={quotesToShow[1].reviewer}
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-                <div className="mt-3 text-2xl font-bold">
-                  {quotesToShow[1].reviewer}
-                </div>
-                <div className="mt-1 text-xl font-medium">
-                  {quotesToShow[1].role}
-                </div>
-                <div className="mt-4 text-lg font-normal">
-                  “{quotesToShow[1].quote}”
-                </div>
-              </div>
-              {/* Counter */}
-              <div className="relative z-10">
-                <div className="mt-8 text-6xl font-bold lg:text-5xl xl:text-6xl">
-                  <div>Join</div>
-                  <InView triggerOnce>
-                    {({ inView, ref }) => (
-                      <div className="mt-2" ref={ref}>
-                        {inView ? (
-                          <CountUp
-                            end={10000000}
-                            separator=","
-                            suffix="+"
-                            duration={1}
-                            delay={0.1}
-                            start={69}
-                          />
-                        ) : (
-                          <div className="mt-2">69</div>
-                        )}
-                      </div>
-                    )}
-                  </InView>
-                  <div className="mt-2">Partiers</div>
-                </div>
-                <div className="mt-6 text-2xl font-normal">
-                  You'll never have to worry about party planning again. Let us
-                  take care of the details while you sit back and enjoy the
-                  celebration!
-                </div>
-                <button
-                  type="button"
-                  className="glass mt-10 mr-2 mb-2 px-6 py-3 text-center text-2xl duration-200 ease-in-out hover:scale-110"
-                >
-                  View more stories
-                </button>
-              </div>
-            </div>
-          )
-        )}
-      </SkeletonTheme>
+        </div>
+      )}
     </section>
   )
 }
 
 export default Testimonials
+
+//TODO: styling and responsivenss

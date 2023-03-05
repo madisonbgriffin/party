@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+
 
 const CTA = () => {
   const navigate = useNavigate()
@@ -27,3 +28,5 @@ const CTA = () => {
 }
 
 export default CTA
+
+//TODO: styling and responsivenss

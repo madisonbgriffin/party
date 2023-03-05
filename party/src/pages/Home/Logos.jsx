@@ -1,4 +1,5 @@
-import Marquee from "react-fast-marquee"
+import Marquee from "react-fast-marquee";
+
 
 const logos = [
   {
@@ -42,3 +43,6 @@ const Logos = () => {
 }
 
 export default Logos
+
+//TODO: add actual logos and make sure they are aligned center
+//TODO: make container fluid

@@ -1,7 +1,6 @@
-import "react-loading-skeleton/dist/skeleton.css"
 import { Route, Routes } from "react-router-dom"
 
-import { Footer, Navbar, Notfound } from "./components"
+import { Footer, Navbar, BackToTop, Notfound } from "./components"
 import { StateContext } from "./context/StateContext"
 import "./index.css"
 import { About, Contact, Home, Shop } from "./pages"
@@ -23,6 +22,7 @@ const App = () => {
           </div>
         </div>
         <Footer />
+        <BackToTop />
       </div>
     </StateContext>
   )
