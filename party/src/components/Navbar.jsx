@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav>
       <div className="flex w-full flex-wrap items-center justify-between p-4">
         {/* logo */}
-        <div className="mr-1 pt-2">
+        <div className="pt-2">
           <Link to="/">
             <img
               src={partylogo}
@@ -37,16 +37,16 @@ const Navbar = () => {
           </Link>
         </div>
         <FiMenu
-          className="relative z-10 block h-8 w-8 cursor-pointer text-white md:hidden"
+          className="relative z-10 block h-8 w-8 cursor-pointer text-white lg:hidden"
           onClick={() => setOpen(!open)}
         ></FiMenu>
         {/* links */}
         <div
           className={`${
             open ? "block" : "hidden"
-          } w-full items-end text-white md:flex md:w-auto md:items-center`}
+          } w-full items-end text-white lg:flex lg:w-auto lg:items-center`}
         >
-          <div className="flex flex-col items-end md:flex-row md:justify-between md:text-xl">
+          <div className="flex flex-col items-end lg:flex-row lg:justify-between lg:text-xl">
             <NavLink
               to="/About"
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
@@ -81,7 +81,7 @@ const Navbar = () => {
                 <NavbarSearch />
               </Popover.Panel>
             </Popover>
-            <div className="flex text-white md:hidden">
+            <div className="flex text-white lg:hidden">
               <button
                 type="button"
                 onClick={() => {
@@ -100,7 +100,7 @@ const Navbar = () => {
         </div>
 
         {/*shopping cart */}
-        <div className="hidden text-white md:flex">
+        <div className="hidden text-white lg:flex">
           <button
             type="button"
             onClick={() => {

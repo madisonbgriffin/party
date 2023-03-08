@@ -1,5 +1,4 @@
-import Marquee from "react-fast-marquee";
-
+import Marquee from "react-fast-marquee"
 
 const logos = [
   {
@@ -30,8 +29,8 @@ const logos = [
 
 const Logos = () => {
   return (
-    <section className="py-16">
-      <Marquee gradient={false} speed={30}>
+    <section className="grade-fade py-16">
+      <Marquee gradient={false} speed={30} className="">
         <div className="flex h-20 text-white brightness-0 invert">
           {logos.map((logo, index) => (
             <img key={index} src={logo.src} alt={logo.alt} className="mx-10" />

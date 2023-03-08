@@ -1,5 +1,4 @@
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom"
 
 const CTA = () => {
   const navigate = useNavigate()
@@ -8,7 +7,7 @@ const CTA = () => {
     navigate("/Shop")
   }
   return (
-    <section className="p-5 py-20 text-center text-white lg:py-40">
+    <section className="py-20 text-center text-white lg:py-40">
       <h1 className="text-5xl font-bold lg:text-6xl">
         LET'S GET THIS PARTY STARTIED!
       </h1>

@@ -11,7 +11,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="p-5 py-14 lg:p-0 lg:py-16">
+    <section className="py-14 lg:p-0 lg:py-16">
       <div className="grid lg:grid-cols-2">
         {/* Left column */}
         <div className="relative z-10 order-1 text-white lg:order-none">

@@ -1,10 +1,7 @@
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"
+import { useNavigate } from "react-router-dom"
 
-
-
-import { partylogo } from "../assets";
-
+import { partylogo } from "../assets"
 
 const Footer = () => {
   const navigate = useNavigate()
@@ -14,8 +11,8 @@ const Footer = () => {
   }
   return (
     <footer className="bg-[#190039]/[.70] text-white">
-      <div className="container mx-auto py-16">
-        <div className="p-5 text-center lg:mx-20 lg:p-1 lg:text-left xl:mx-24">
+      <div className="container mx-auto w-4/5 py-16">
+        <div className="p-5 text-center lg:text-left">
           <img
             className="mx-auto mb-8 h-40 cursor-pointer"
             src={partylogo}

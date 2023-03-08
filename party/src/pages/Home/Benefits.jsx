@@ -37,7 +37,7 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section className="p-5 py-16 text-white">
+    <section className="py-16 text-white">
       <h1 className="glass relative rounded-[69px] py-32 text-center text-4xl font-bold lg:py-40 lg:text-6xl">
         Here are the benefits:
       </h1>

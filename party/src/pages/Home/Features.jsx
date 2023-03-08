@@ -18,17 +18,19 @@ const featureData = [
 
 const Features = () => {
   return (
-    <section className="lg:py-16 py-5  p-5 text-white">
+    <section className="py-5 text-white lg:py-16">
       {featureData.map((feature, index) => (
         <div
           key={index}
           className={`flex ${
             index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-          } glass lg:mb-12 mb-6 items-center justify-center rounded-[69px] p-10 lg:p-16 gap-8`}
+          } glass mb-6 items-center justify-center gap-8 rounded-[69px] p-10 lg:mb-12 lg:p-16`}
         >
           <div className="w-1/2 text-center">
-            <h2 className="mb-4 lg:text-6xl text-3xl font-bold">{feature.title}</h2>
-            <p className="lg:text-lg text-md">{feature.desc}</p>
+            <h2 className="mb-4 text-3xl font-bold lg:text-6xl">
+              {feature.title}
+            </h2>
+            <p className="text-md lg:text-lg">{feature.desc}</p>
           </div>
           <div className="w-1/2">
             <img
@@ -47,4 +49,3 @@ export default Features
 
 //TODO: tweak design, maybe flow chart thing
 //TODO: styling and responsivenss
-

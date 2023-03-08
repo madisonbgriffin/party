@@ -33,7 +33,7 @@ const faqData = [
 
 const FAQ = () => {
   return (
-    <section className=" lg:py-16 py-20 p-5 text-white">
+    <section className="py-20 text-white lg:py-16">
       <h1 className="text-center text-4xl font-bold lg:text-7xl">FAQ</h1>
       {faqData.map((faq, index) => (
         <div key={index}>

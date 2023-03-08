@@ -444,61 +444,73 @@ export const cartItems = [
 export const slide_images = [
   {
     title: "New Year's Eve",
+    description: "Celebrate the new year with us!",
     image:
       "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/new-year-party-royalty-free-image-495479466-1541453010.jpg",
   },
   {
     title: "Christmas",
+    description: "Celebrate the holidays with us!",
     image:
       "https://cdn.greenvelope.com/blog/wp-content/uploads/AdobeStock_288903280.jpeg",
   },
   {
     title: "Pi Day",
+    description: "Celebrate Pi Day with us!",
     image:
       "https://www.uncommongoods.com/blog/wp-content/uploads/2015/02/Tablescape-548x395.jpg",
   },
   {
     title: "4th of July",
+    description: "Celebrate the 4th of July with us!",
     image:
       "https://www.extremecanopy.com/wp-content/uploads/2019/07/adobestock_129565509-scaled.jpeg",
   },
   {
     title: "Valentine's Day",
+    description: "Celebrate Valentine's Day with us!",
     image:
       "https://www.1800flowers.com/blog/wp-content/uploads/2022/01/Valentines-Day-party-hero-1024x576.jpg.webp",
   },
   {
     title: "Halloween",
+    description: "Celebrate Halloween with us!",
     image:
       "https://cdn.greenvelope.com/blog/wp-content/uploads/AdobeStock_272970293.jpeg",
   },
   {
     title: "Mother's Day",
+    description: "Celebrate Mother's Day with us!",
     image:
       "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2014/3/25/0/Original_Katie-Meyers-Mothers-Day-Lunch-Beauty1_h.jpg.rend.hgtvcom.966.725.suffix/1400989755648.jpeg",
   },
   {
     title: "Father's Day",
+    description: "Celebrate Father's Day with us!",
     image:
       "https://americanpavilion.com/wp-content/uploads/2018/05/Happy-Fathers-Day.jpg",
   },
   {
     title: "Thanksgiving",
+    description: "Celebrate Thanksgiving with us!",
     image:
       "https://cdn.greenvelope.com/blog/wp-content/uploads/people-celebrating-Thanksgiving.jpeg",
   },
   {
     title: "St. Patrick's Day",
+    description: "Celebrate St. Patrick's Day with us!",
     image:
       "https://steamwhistle.ca/blog/wp-content/uploads/2020/03/st-pattys-day-2017-2-1024x684.jpg",
   },
   {
     title: "Easter",
+    description: "Celebrate Easter with us!",
     image:
       "https://media-api.xogrp.com/images/1098d163-ef06-4712-bbca-6a70526e5aac~cr_0.0.1991.1334?quality=50",
   },
   {
     title: "Cinco de Mayo",
+    description: "Celebrate Cinco de Mayo with us!",
     image:
       "https://www.gannett-cdn.com/presto/2022/04/28/NPPP/7c15e337-50af-443b-990e-467b327e481a-Bodega_Cinco_handout.jpg?width=660&height=440&fit=crop&format=pjpg&auto=webp",
   },
