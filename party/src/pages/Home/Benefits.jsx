@@ -47,11 +47,13 @@ const Benefits = () => {
             key={index}
             className="glass rounded-[69px] p-5 text-center lg:p-16"
           >
+            <div className="lg:w-100 w-60 mx-auto ">
             <img
               src={benefit.image}
               alt={benefit.title}
               className="mx-auto mb-4 rounded-2xl"
             />
+            </div>
             <div className="mb-2 text-2xl font-bold lg:text-3xl">
               {benefit.title}
             </div>

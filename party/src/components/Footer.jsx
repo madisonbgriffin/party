@@ -10,7 +10,7 @@ const Footer = () => {
     navigate("/")
   }
   return (
-    <footer className="bg-[#190039]/[.70] text-white">
+    <footer className="bg-[#190039]/[.70] text-white relative z-10">
       <div className="container mx-auto w-4/5 py-16">
         <div className="p-5 text-center lg:text-left">
           <img

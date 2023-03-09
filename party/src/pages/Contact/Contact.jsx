@@ -10,7 +10,7 @@ const Contact = () => {
     <>
       <ContactInfo />
       <ContactForm />
-    </>
+    </> 
   )
 }
 

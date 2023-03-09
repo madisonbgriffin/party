@@ -99,7 +99,7 @@ const Testimonials = () => {
     <section className="pt-14 lg:pt-16">
       {/* Left-side swirl image */}
       <div className="absolute -left-48">
-        <img src={swirl} alt="swirl" className="relative top-36" />
+        <img src={swirl} alt="swirl" className="relative top-36 blur" />
       </div>
       {/* Right-side background circle with gradient */}
       <div className="absolute -right-32">
