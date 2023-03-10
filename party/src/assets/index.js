@@ -12,6 +12,7 @@ import partyboy from "./partyboy.png"
 import partylogo from "./partylogo.png"
 import partylogonowords from "./partylogonowords.png"
 import swirl from "./swirl.png"
+import partyhq from "./partyhq.jpg"
 
 export {
   partylogo,
@@ -28,4 +29,5 @@ export {
   balloons,
   blob,
   partylogonowords,
+  partyhq,
 }

@@ -96,14 +96,14 @@ const Testimonials = () => {
   }, [])
 
   return (
-    <section className="pt-14 lg:pt-16">
+    <section className="py-14 lg:py-16">
       {/* Left-side swirl image */}
-      <div className="absolute -left-48">
-        <img src={swirl} alt="swirl" className="relative top-36 blur" />
+      <div className="absolute -left-20 w-1/2">
+        <img src={swirl} alt="swirl" className="relative top-80 blur" />
       </div>
       {/* Right-side background circle with gradient */}
       <div className="absolute -right-32">
-        <div className="relative bottom-72 z-0 h-[675px] w-[675px] rounded-[50%] bg-gradient-to-b from-[#C194EA] to-[#EE77C7]/[0.94] opacity-[0.75] blur-[3px]" />
+        <div className="relative bottom-72 z-0 h-[600px] w-[600px] rounded-[50%] bg-gradient-to-b from-[#C194EA] to-[#EE77C7]/[0.94] opacity-[0.75] blur-[3px]" />
       </div>
       {/* Right-side foreground circle with gradient */}
       <div className="absolute right-72">

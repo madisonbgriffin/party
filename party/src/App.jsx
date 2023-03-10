@@ -9,16 +9,16 @@ const App = () => {
   return (
     <StateContext>
       <div className="relative overflow-x-hidden bg-gradient-to-b from-[#5400BF] to-[#1D0043]">
-        <div className="container mx-auto w-4/5">
+        <div className="section-container">
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/About" element={<About />} />
-            <Route path="Shop" element={<Shop />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="*" element={<Notfound />} />
-          </Routes>
         </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="Shop" element={<Shop />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="*" element={<Notfound />} />
+        </Routes>
         <Footer />
         <BackToTop />
       </div>

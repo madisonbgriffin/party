@@ -8,9 +8,13 @@ const Contact = () => {
   }, [])
   return (
     <>
-      <ContactInfo />
-      <ContactForm />
-    </> 
+      <div className="section-container">
+        <ContactInfo />
+      </div>
+      <div className="section-container">
+        <ContactForm />
+      </div>
+    </>
   )
 }
 

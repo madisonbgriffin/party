@@ -16,13 +16,25 @@ const Home = () => {
   }, [])
   return (
     <>
-      <Hero />
-      <Testimonials />
-      <Logos />
-      <Benefits />
-      <Features />
-      <FAQ />
-      <CTA />
+      <div className="section-container">
+        <Hero />
+      </div>
+      <div className="section-container">
+        <Testimonials />
+      </div>
+        <Logos />
+      <div className="section-container">
+        <Benefits />
+      </div>
+      <div className="section-container">
+        <Features />
+      </div>
+      <div className="section-container">
+        <FAQ />
+      </div>
+      <div className="section-container">
+        <CTA />
+      </div>
     </>
   )
 }

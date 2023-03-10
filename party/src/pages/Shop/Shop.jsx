@@ -17,12 +17,24 @@ const Shop = () => {
   return (
     <>
       <Carousel />
-      <Search />
-      <Sort />
-      <Filter />
-      <Product />
-      <Pagination />
-      <Preview />
+      <div className="section-container">
+        <Search />
+      </div>
+      <div className="section-container">
+        <Sort />
+      </div>
+      <div className="section-container">
+        <Filter />
+      </div>
+      <div className="section-container">
+        <Product />
+      </div>
+      <div className="section-container">
+        <Pagination />
+      </div>
+      <div className="section-container">
+        <Preview />
+      </div>
     </>
   )
 }

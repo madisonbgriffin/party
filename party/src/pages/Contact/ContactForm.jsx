@@ -5,12 +5,10 @@ import { blob } from "../../assets"
 const ContactForm = () => {
   return (
     <section className="py-16 lg:px-20 ">
-    
-      <div className="absolute -left-32">
-        <div className="relative bottom-72 z-0 h-[400px] w-[400px] rounded-[50%] bg-gradient-to-b from-[#C2A0F0] to-[#EE77C7]/[0.94] opacity-[0.75] blur-[3px]" />
+      <div className="absolute -left-20 -top-20">
+        <div className="relative bottom-0 z-1 h-[400px] w-[400px] rounded-[50%] bg-gradient-to-b from-[#C2A0F0]/[0.54] to-[#E25D67]/[0.68] opacity-[0.75] blur-[3px]" />
       </div>
-      
-      <div className="absolute left-20 top-20">
+      <div className="absolute left-40 top-40">
         <div className="relative bottom-0 z-0 h-[300px] w-[300px] rounded-[50%] bg-gradient-to-b from-[#4C6DDF]/[0.54] to-[#E46EC7]/[0.68] opacity-[0.75] blur-[3px]" />
       </div>
 
@@ -20,13 +18,13 @@ const ContactForm = () => {
 
       <div className="absolute top-0 right-0 z-0 h-[50vh] w-1/2 rounded-full bg-[#F2F2F2] opacity-[0.94] blur-[130px]" />
 
-      <div className="glass relative rounded-[69px] text-white ">
-        <div className="container mx-auto px-5 py-10 lg:mx-auto">
+      <div className="glass rounded-[69px] text-white ">
+        <div className="px-5 py-10 lg:mx-auto">
           <div className="mb-12 flex w-full flex-col text-center">
             <h1 className="mb-4 text-3xl font-medium lg:text-5xl">
               Contact Us
             </h1>
-            <p className="mx-auto text-base leading-relaxed lg:w-2/3">
+            <p className="mx-auto text-xl leading-relaxed lg:w-2/3 lg:text-2xl">
               Questions you may have will be answered
             </p>
           </div>

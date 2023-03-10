@@ -8,6 +8,10 @@
   .glass {
     @apply rounded-full border-[2px] border-white/20 from-white/10 to-white/0 shadow-[0_8px_32px_rgba(0,0,0,0.37)] backdrop-blur-md bg-gradient-135;
   }
+
+  .section-container {
+    @apply container mx-auto w-4/5;
+  }
 }
 
 * {
@@ -15,5 +19,4 @@
 }
 
 .grade-fade {
-
 }
