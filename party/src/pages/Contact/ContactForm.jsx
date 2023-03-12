@@ -21,10 +21,10 @@ const ContactForm = () => {
       <div className="glass rounded-[69px] text-white ">
         <div className="px-5 py-10 lg:mx-auto">
           <div className="mb-12 flex w-full flex-col text-center">
-            <h1 className="mb-4 text-3xl font-medium lg:text-5xl">
+            <h1 className="mb-4 text-3xl font-medium lg:text-5xl xl:text-6xl">
               Contact Us
             </h1>
-            <p className="mx-auto text-xl leading-relaxed lg:w-2/3 lg:text-2xl">
+            <p className="mx-auto text-xl leading-relaxed lg:w-2/3 lg:text-2xl xl:text-3xl">
               Questions you may have will be answered
             </p>
           </div>
@@ -107,7 +107,7 @@ const ContactForm = () => {
                   </div>
                   <div className="w-full p-2">
                     <button
-                      className="mx-auto flex rounded border-0 bg-pink-600 py-2 px-5 text-sm text-white hover:bg-pink-700 focus:outline-none lg:px-8 lg:text-lg"
+                      className="mx-auto flex rounded border-0 bg-pink-600 py-2 px-5 text-sm text-white hover:bg-pink-700 focus:outline-none lg:px-8 xl:text-xl lg:text-lg"
                       type="submit"
                     >
                       Submit

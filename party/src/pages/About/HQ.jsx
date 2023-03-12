@@ -2,11 +2,11 @@ import { partyhq } from "../../assets"
 
 const HQ = () => {
   return (
-    <section className="py-40 md:px-40 lg:px-20">
-      <div className="relative z-20 top-10 w-1/2 ">
-      <img src={partyhq} alt="" />
+    <section className="py-40 ">
+      <div className="relative top-10 z-20 xl:w-max w-full mx-auto" >
+      <img src={partyhq} alt="" className="relative rounded-[50px]"/>
       </div>
-      <div className="glass relative rounded-[50px] p-10 pb-10 text-white lg:pb-20">
+      <div className="glass relative rounded-[50px] p-10 pb-10 text-white lg:pb-20 md:px-40 lg:px-20 ">
         <div className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
           OUR HQ
         </div>
