@@ -6,7 +6,7 @@ const ContactForm = () => {
   return (
     <section className="py-16 lg:px-20 ">
       <div className="absolute -left-20 -top-20">
-        <div className="relative bottom-0 z-1 h-[400px] w-[400px] rounded-[50%] bg-gradient-to-b from-[#C2A0F0]/[0.54] to-[#E25D67]/[0.68] opacity-[0.75] blur-[3px]" />
+        <div className="z-1 relative bottom-0 h-[400px] w-[400px] rounded-[50%] bg-gradient-to-b from-[#C2A0F0]/[0.54] to-[#E25D67]/[0.68] opacity-[0.75] blur-[3px]" />
       </div>
       <div className="absolute left-40 top-40">
         <div className="relative bottom-0 z-0 h-[300px] w-[300px] rounded-[50%] bg-gradient-to-b from-[#4C6DDF]/[0.54] to-[#E46EC7]/[0.68] opacity-[0.75] blur-[3px]" />
@@ -107,7 +107,7 @@ const ContactForm = () => {
                   </div>
                   <div className="w-full p-2">
                     <button
-                      className="mx-auto flex rounded border-0 bg-pink-600 py-2 px-5 text-sm text-white hover:bg-pink-700 focus:outline-none lg:px-8 xl:text-xl lg:text-lg"
+                      className="mx-auto flex rounded border-0 bg-pink-600 py-2 px-5 text-sm text-white hover:bg-pink-700 focus:outline-none lg:px-8 lg:text-lg xl:text-xl"
                       type="submit"
                     >
                       Submit

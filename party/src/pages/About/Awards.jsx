@@ -3,12 +3,12 @@ import React from "react"
 const Awards = () => {
   return (
     <section>
-      <div className="font-bold text-center py-16 lg:text-4xl text-3xl text-white">
-Award Winning Team
+      <div className="py-16 text-center text-3xl font-bold text-white lg:text-4xl">
+        Award Winning Team
       </div>
-      <div className="glass rounded-[30px] lg:text-3xl md:text-2xl text-xl lg:px-10 pt-7 text-center">
-          awards
-            </div>
+      <div className="glass rounded-[30px] pt-7 text-center text-xl md:text-2xl lg:px-10 lg:text-3xl">
+        awards
+      </div>
     </section>
   )
 }
